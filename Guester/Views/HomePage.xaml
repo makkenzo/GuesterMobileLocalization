@@ -1215,7 +1215,7 @@
 
 
                             <Border   Padding="10,0" HorizontalOptions="Center" WidthRequest="400" Margin="0,40,0,0" >
-                                <inputLayout:SfTextInputLayout Hint="ip адресс"
+                                <inputLayout:SfTextInputLayout Hint="{x:Static res:AppResources.IPAddress}"
            IsHintAlwaysFloated="true" 
            ContainerType="None"
           >
@@ -1224,7 +1224,7 @@
 
                             </Border>
                             <Border   Padding="10,0" HorizontalOptions="Center" WidthRequest="400" Margin="0,40,0,0"  IsVisible="{Binding CurrentCash.CashRegisterType,Converter={StaticResource CashRegisterTypToVisibilityConverter},Mode=TwoWay}">
-                                <inputLayout:SfTextInputLayout Hint="Логин ккм" 
+                                <inputLayout:SfTextInputLayout Hint="{x:Static res:AppResources.LoginKKM}" 
  IsHintAlwaysFloated="true" 
  ContainerType="None" >
 

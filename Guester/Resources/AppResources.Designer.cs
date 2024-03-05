@@ -98,6 +98,14 @@ namespace Guester.Resources
             }
         }
 
+        internal static string IPAddress
+        {
+            get
+            {
+                return ResourceManager.GetString("IPAddress", resourceCulture);
+            }
+        }
+
         internal static string LogOutOfApp
         {
             get
@@ -135,6 +143,14 @@ namespace Guester.Resources
             get
             {
                 return ResourceManager.GetString("ClearCache", resourceCulture);
+            }
+        }
+
+        internal static string LoginKKM
+        {
+            get
+            {
+                return ResourceManager.GetString("LoginKKM", resourceCulture);
             }
         }
 

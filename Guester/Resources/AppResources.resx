@@ -984,4 +984,10 @@
   <data name="LogOutOfApp" xml:space="preserve">
     <value>Выйти из аккаунта</value>
   </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Адрес</value>
+  </data>
+  <data name="LoginKKM" xml:space="preserve">
+    <value>Логин ККМ</value>
+  </data>
 </root>

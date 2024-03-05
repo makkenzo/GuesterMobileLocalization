@@ -978,4 +978,16 @@
   <data name="OrderIsPaid" xml:space="preserve">
     <value>Buyurtma to'lanadi</value>
   </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Keshni tozalash</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP manzili</value>
+  </data>
+  <data name="LoginKKM" xml:space="preserve">
+    <value>Kirish KKM</value>
+  </data>
+  <data name="LogOutOfApp" xml:space="preserve">
+    <value>Hisobingizdan chiqing</value>
+  </data>
 </root>

@@ -1008,4 +1008,7 @@
   <data name="Take_away" xml:space="preserve">
     <value>Takeaway</value>
   </data>
+  <data name="LoginKKM" xml:space="preserve">
+    <value>qqqq</value>
+  </data>
 </root>
