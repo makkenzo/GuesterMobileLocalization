@@ -20,7 +20,6 @@ using Remotion.Linq.Parsing.Structure.NodeTypeProviders;
 
 using Syncfusion.Maui.DataSource.Extensions;
 using Syncfusion.Maui.ListView;
-using Xamarin.Google.Crypto.Tink.Subtle;
 using static Guester.ViewModels.HomePageViewModel;
 using static Microsoft.Maui.ApplicationModel.Permissions;
 
