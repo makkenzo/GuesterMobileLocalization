@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Widgets.FunctionalMenu"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+             xmlns:fa="clr-namespace:FontAwesome"
+             xmlns:mcu="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:helpers="clr-namespace:Guester.Helpers"             
+             xmlns:res ="clr-namespace:Guester.Resources"
+             xmlns:models="clr-namespace:Guester.Models"
+             >
+
+    <toolkit:Popup.BindingContext >
+        <vm:FunctionalMenuViewModel/>
+    </toolkit:Popup.BindingContext>
+
+    <!--<toolkit:Popup.Animation>
+        <Animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+             ScaleIn="1"
+             ScaleOut="1.2"
+            DurationIn="400"
+            DurationOut="100"
+            EasingIn="SinOut"
+            EasingOut="SinIn" 
+            HasBackgroundAnimation="True" />
+    </toolkit:Popup.Animation>
+
+    <toolkit:Popup.Resources>
+        <ResourceDictionary>
+            <mcu:InvertedBoolConverter x:Key="InvertBool" />
+            <helpers:ProfileImageSourceConverter x:Key="ProfileImageSourceConverter"/>
+            <helpers:ShopImageSourceConverter x:Key="ShopImageSourceConverter"/>
+            <helpers:UserRoleToTextConverter x:Key="UserRoleToTextConverter"/>
+          
+        </ResourceDictionary>
+    </toolkit:Popup.Resources>-->
+
+
+            <Border Padding="15" Margin="0" BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark},Light={StaticResource BackgroundColorLight}}" VerticalOptions="Center" HorizontalOptions="Center"
+            MinimumHeightRequest="100"  MinimumWidthRequest="200"  >
+            <ScrollView>
+                <Grid RowDefinitions="50,40,170,40,170,40,170" RowSpacing="20" ColumnSpacing="40"  ColumnDefinitions="130,130,1,130,130" >
+
+                        <Label Text="{x:Static res:AppResources.Functions}"  FontSize="32" Grid.Column="1" Grid.ColumnSpan="3" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Start" />
+                    <Border Grid.Column="4" Margin="-10" Padding="10" BackgroundColor="Transparent">
+                         <Label Text="{x:Static fa:FontAwesomeIcons.Xmark}" FontFamily="FAS" Margin="0,0,0,20" FontSize="32" Grid.Column="1" Grid.ColumnSpan="3" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Start" />
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                    </Border.GestureRecognizers>
+                </Border>
+
+                    <HorizontalStackLayout      Grid.Row="1" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}" 
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.Fiscalization}" Margin="10,0" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" TextDecorations="Underline" />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="2" BackgroundColor="#CD3D43" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="X" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.Xreport}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding XReportCommand}" />
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                    <Border  Grid.Row="2" Grid.Column="1" BackgroundColor="#CD3D43" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="Z" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.Zreport}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ZRe}" />
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                    <HorizontalStackLayout     Grid.Row="3" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}" 
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.Booking}" Margin="10,0" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" TextDecorations="Underline" />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="4" BackgroundColor="#66B2F0" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.CalendarDays}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.Booking}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <Border  Grid.Row="4" Grid.Column="1" BackgroundColor="#66B2F0" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.CalendarPlus}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.NewBooking}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <HorizontalStackLayout     Grid.Row="5" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}" 
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.Equipment}" Margin="10,0" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" TextDecorations="Underline" />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="6" BackgroundColor="#9747FF" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Wrench}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.Devices}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <Border  Grid.Row="6" Grid.Column="1" BackgroundColor="#9747FF" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.CashRegister}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.OpenMoneyBox}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <BoxView WidthRequest="1" Opacity="0.4" Grid.Row="1" Grid.Column="2" Grid.RowSpan="6" />
+
+
+                    <HorizontalStackLayout     Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"  
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.CashShift}" Margin="10,0" FontSize="24" FontAttributes="Bold" TextDecorations="Underline" VerticalOptions="CenterAndExpand"  />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="2" Grid.Column="3"  BackgroundColor="#F7B548" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Key}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.CloseShift}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HomePageViewModel.ExitFromCashShiftCommand}" />
+
+                    </Border.GestureRecognizers>
+                    </Border>
+
+                    <Border  Grid.Row="2" Grid.Column="4" BackgroundColor="#F7B548" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Plus}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.CreateTransaction}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <HorizontalStackLayout     Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"  
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.EmplyeeShifts}" Margin="10,0" FontSize="24" FontAttributes="Bold" TextDecorations="Underline" VerticalOptions="CenterAndExpand"  />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="4" Grid.Column="3"  BackgroundColor="#479649" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Users}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.AllShifts}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <Border  Grid.Row="4" Grid.Column="4" BackgroundColor="#479649" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.UserLock}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.EndShift}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <HorizontalStackLayout     Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2">
+                        <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"  
+                        HeightRequest="10" WidthRequest="10" VerticalOptions="CenterAndExpand"  />
+
+                        <Label Text="{x:Static res:AppResources.Other}" Margin="10,0" FontSize="24" FontAttributes="Bold" TextDecorations="Underline" VerticalOptions="CenterAndExpand"  />
+                    </HorizontalStackLayout>
+                    <Border  Grid.Row="6" Grid.Column="3"  BackgroundColor="#66B2F0" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Repeat}" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="{x:Static res:AppResources.AllShifts}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>
+
+                    <!--<Border  Grid.Row="6" Grid.Column="4" BackgroundColor="#66B2F0" >
+                        <Grid RowDefinitions="130,*">
+                            <Label Text="X" HorizontalTextAlignment="Center" FontSize="64"  VerticalTextAlignment="Center" TextColor="White" FontFamily="FAS" />
+                            <Border Grid.Row="2"  StrokeShape="RoundRectangle 0"  >
+                                <Label Text="X - отчет" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                    </Border>-->
+
+                </Grid>
+
+            </ScrollView>
+        </Border>
+
+
+</toolkit:Popup>

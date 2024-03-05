@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCommentToReceipt" xml:space="preserve">
+    <value>Add a comment to the order</value>
+  </data>
+  <data name="AddedProductQuantity" xml:space="preserve">
+    <value>Added product quantity</value>
+  </data>
+  <data name="AddGuest" xml:space="preserve">
+    <value>ADD A GUEST</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllOrders" xml:space="preserve">
+    <value>All orders</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>All products</value>
+  </data>
+  <data name="AllReceipts" xml:space="preserve">
+    <value>All receipts</value>
+  </data>
+  <data name="AllShifts" xml:space="preserve">
+    <value>All shifts</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="AttempDeleteLastGuest" xml:space="preserve">
+    <value>Attempt to delete the last guest</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Bakery" xml:space="preserve">
+    <value>Bakery</value>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="BillClosed" xml:space="preserve">
+    <value>Account closed</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
+  <data name="Buns" xml:space="preserve">
+    <value>Buns</value>
+  </data>
+  <data name="ByBankCard" xml:space="preserve">
+    <value>By bank card</value>
+  </data>
+  <data name="Cakes" xml:space="preserve">
+    <value>Cakes</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>Cancel the order</value>
+  </data>
+  <data name="Cappuccino" xml:space="preserve">
+    <value>Cappuccino</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>In cash</value>
+  </data>
+  <data name="CashShift" xml:space="preserve">
+    <value>Cash shift</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>Certificate</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change:</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="CloseShift" xml:space="preserve">
+    <value>Close shift</value>
+  </data>
+  <data name="CloseWithoutPayment" xml:space="preserve">
+    <value>Close without payment</value>
+  </data>
+  <data name="Coffee" xml:space="preserve">
+    <value>Coffee</value>
+  </data>
+  <data name="Cola" xml:space="preserve">
+    <value>Cola</value>
+  </data>
+  <data name="CreateTransaction" xml:space="preserve">
+    <value>Create a transaction</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Delivered</value>
+  </data>
+  <data name="DeliveryAddress" xml:space="preserve">
+    <value>Delivery address</value>
+  </data>
+  <data name="DeliveryTime" xml:space="preserve">
+    <value>Delivery time</value>
+  </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Devices</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="Drinks" xml:space="preserve">
+    <value>Drinks</value>
+  </data>
+  <data name="Eight" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EmployeeShifts" xml:space="preserve">
+    <value>Employee shifts</value>
+  </data>
+  <data name="EndShift" xml:space="preserve">
+    <value>End shift</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EnterText" xml:space="preserve">
+    <value>Enter the text</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="ErrorAddingProduct" xml:space="preserve">
+    <value>Error when adding a product</value>
+  </data>
+  <data name="Espresso" xml:space="preserve">
+    <value>Espresso</value>
+  </data>
+  <data name="Fanta" xml:space="preserve">
+    <value>Fanta</value>
+  </data>
+  <data name="Fiscalization" xml:space="preserve">
+    <value>Fiscalization</value>
+  </data>
+  <data name="Five" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Four" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="GuestAdded" xml:space="preserve">
+    <value>Guest added</value>
+  </data>
+  <data name="GuestQuantity" xml:space="preserve">
+    <value>number of guests</value>
+  </data>
+  <data name="Hallmap" xml:space="preserve">
+    <value>Hall map</value>
+  </data>
+  <data name="IceCream" xml:space="preserve">
+    <value>Ice cream</value>
+  </data>
+  <data name="InEnvy" xml:space="preserve">
+    <value>In the institution</value>
+  </data>
+  <data name="InRestaurant" xml:space="preserve">
+    <value>In the restaurant</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Invalid or unsuitable code</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="InWay" xml:space="preserve">
+    <value>On the way</value>
+  </data>
+  <data name="KZT" xml:space="preserve">
+    <value>tg</value>
+  </data>
+  <data name="Latte" xml:space="preserve">
+    <value>Latte</value>
+  </data>
+  <data name="LeftoversWarehouse" xml:space="preserve">
+    <value>Leftovers in the warehouse</value>
+  </data>
+  <data name="MixedPayment" xml:space="preserve">
+    <value>Mixed payment</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewBooking" xml:space="preserve">
+    <value>New booking</value>
+  </data>
+  <data name="NewOrder" xml:space="preserve">
+    <value>New Order</value>
+  </data>
+  <data name="Nine" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NumberTwentyFive" xml:space="preserve">
+    <value>№25</value>
+  </data>
+  <data name="One" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="OpenMoneyBox" xml:space="preserve">
+    <value>Open the money box</value>
+  </data>
+  <data name="OpenOrder" xml:space="preserve">
+    <value>The order is being viewed</value>
+  </data>
+  <data name="OrCancelled" xml:space="preserve">
+    <value>cancelled</value>
+  </data>
+  <data name="OrClossed" xml:space="preserve">
+    <value>clossed</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Order type</value>
+  </data>
+  <data name="OrderUnderNumber" xml:space="preserve">
+    <value>Order under №</value>
+  </data>
+  <data name="OrderWasClosed" xml:space="preserve">
+    <value>The order was closed</value>
+  </data>
+  <data name="OrderWasClossedWithoutPayment" xml:space="preserve">
+    <value>The order was closed without payment</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Oz" xml:space="preserve">
+    <value>OZ</value>
+  </data>
+  <data name="PaidByCard" xml:space="preserve">
+    <value>Paid by card</value>
+  </data>
+  <data name="PaidInCash" xml:space="preserve">
+    <value>Paid in cash</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>To pay</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="PaymentInCard" xml:space="preserve">
+    <value>Payment by card</value>
+  </data>
+  <data name="PaymentInCash" xml:space="preserve">
+    <value>Payment in cash</value>
+  </data>
+  <data name="PreviousDays" xml:space="preserve">
+    <value>Previous days</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PrintReceipt" xml:space="preserve">
+    <value>Print a receipt</value>
+  </data>
+  <data name="ProductWasRemoved" xml:space="preserve">
+    <value>The product was removed</value>
+  </data>
+  <data name="Promotions" xml:space="preserve">
+    <value>Promotions</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="ReceiptArchive" xml:space="preserve">
+    <value>Archive of receipts</value>
+  </data>
+  <data name="ReceiptList" xml:space="preserve">
+    <value>A list of receipts will be displayed here</value>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>Receipt №</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>Receipt type</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Refund</value>
+  </data>
+  <data name="Refunds" xml:space="preserve">
+    <value>Refunds</value>
+  </data>
+  <data name="Returnable" xml:space="preserve">
+    <value>Returnable</value>
+  </data>
+  <data name="Rus" xml:space="preserve">
+    <value>Ru</value>
+  </data>
+  <data name="RussianLanguage" xml:space="preserve">
+    <value>Ru</value>
+  </data>
+  <data name="Russion" xml:space="preserve">
+    <value>Ru</value>
+  </data>
+  <data name="Selling" xml:space="preserve">
+    <value>Selling</value>
+  </data>
+  <data name="Seven" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Six" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SomeZone" xml:space="preserve">
+    <value>Some king of zone</value>
+  </data>
+  <data name="Sprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Succes" xml:space="preserve">
+    <value>Succes</value>
+  </data>
+  <data name="SymbolNumber" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="TableNumber" xml:space="preserve">
+    <value>Table №</value>
+  </data>
+  <data name="Tables" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="Takeout" xml:space="preserve">
+    <value>Takeaway</value>
+  </data>
+  <data name="Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TenThousand" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="Three" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="TookAwayQuantityProduct" xml:space="preserve">
+    <value>Took away the quantity of the product</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TotalToPay" xml:space="preserve">
+    <value>To be paid</value>
+  </data>
+  <data name="TwentyThousand" xml:space="preserve">
+    <value>20000</value>
+  </data>
+  <data name="Two" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TypesOfOrders" xml:space="preserve">
+    <value>Types of orders</value>
+  </data>
+  <data name="Us" xml:space="preserve">
+    <value>US</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Uzbek" xml:space="preserve">
+    <value>Uz</value>
+  </data>
+  <data name="WaitingTheActivationDevice" xml:space="preserve">
+    <value>Waiting for the activation of the device</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="WasCancelled" xml:space="preserve">
+    <value>cancelled</value>
+  </data>
+  <data name="WasCreated" xml:space="preserve">
+    <value>was created</value>
+  </data>
+  <data name="WasDeleted" xml:space="preserve">
+    <value>was deleted</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="WithoutPayment" xml:space="preserve">
+    <value>Without payment</value>
+  </data>
+  <data name="Xreport" xml:space="preserve">
+    <value>X - report</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Zreport" xml:space="preserve">
+    <value>X - report</value>
+  </data>
+  <data name="EnteringSummLessError" xml:space="preserve">
+    <value>The entered amount is less than in the check</value>
+  </data>
+  <data name="ChoseLang" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="AdditionalyDelivery" xml:space="preserve">
+    <value>Additionally: entrance, floor, apartment, etc.</value>
+  </data>
+  <data name="AddNewAddress" xml:space="preserve">
+    <value>Add a new address</value>
+  </data>
+  <data name="AddNewCard" xml:space="preserve">
+    <value>Add a new map</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AddToCheck" xml:space="preserve">
+    <value>Add to the check</value>
+  </data>
+  <data name="AllItems" xml:space="preserve">
+    <value>All goods</value>
+  </data>
+  <data name="AuthorizationDevice" xml:space="preserve">
+    <value>Authorization of the device</value>
+  </data>
+  <data name="BalanceOfMoneyAfterCollection" xml:space="preserve">
+    <value>Amount of money in the cash register</value>
+  </data>
+  <data name="BirthDayDate" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="CantCreateCashRegisterError" xml:space="preserve">
+    <value>Failed to create a cash register shift</value>
+  </data>
+  <data name="CantEndCashRegister" xml:space="preserve">
+    <value>It is impossible to close the shift, the number of attempts is exceeded</value>
+  </data>
+  <data name="CantStartCashRegister" xml:space="preserve">
+    <value>It is impossible to start a shift</value>
+  </data>
+  <data name="CardHall" xml:space="preserve">
+    <value>Hall</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Card number</value>
+  </data>
+  <data name="ClientBalance" xml:space="preserve">
+    <value>Balance Customer</value>
+  </data>
+  <data name="ClientCard" xml:space="preserve">
+    <value>CLIENT CARD</value>
+  </data>
+  <data name="ClientEmail" xml:space="preserve">
+    <value>Email customer</value>
+  </data>
+  <data name="ClientGroup" xml:space="preserve">
+    <value>Client group</value>
+  </data>
+  <data name="ClosedLabel" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmLabel" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="CountryLabel" xml:space="preserve">
+    <value>Side</value>
+  </data>
+  <data name="DeliveryDetail" xml:space="preserve">
+    <value>Delivery details</value>
+  </data>
+  <data name="DeliveryLabel" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="DeliveryZone" xml:space="preserve">
+    <value>Delivery zone</value>
+  </data>
+  <data name="DetailDelivery" xml:space="preserve">
+    <value>Details of the feed</value>
+  </data>
+  <data name="DeviceAuthLabel" xml:space="preserve">
+    <value>Authorization data can be viewed in your personal account</value>
+  </data>
+  <data name="EmplyeeShifts" xml:space="preserve">
+    <value>Shifts of employees</value>
+  </data>
+  <data name="En" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EngLang" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Enter the address</value>
+  </data>
+  <data name="EnterCardNumber" xml:space="preserve">
+    <value>Enter the card number</value>
+  </data>
+  <data name="EnterCity" xml:space="preserve">
+    <value>Enter the city</value>
+  </data>
+  <data name="EnterClientEmail" xml:space="preserve">
+    <value>Enter the email client</value>
+  </data>
+  <data name="EnterFlmClient" xml:space="preserve">
+    <value>Enter the name of the client</value>
+  </data>
+  <data name="EnterLogin" xml:space="preserve">
+    <value>Enter login</value>
+  </data>
+  <data name="EnterPswd" xml:space="preserve">
+    <value>enter password</value>
+  </data>
+  <data name="EnterSum" xml:space="preserve">
+    <value>Enter the amount</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>Field</value>
+  </data>
+  <data name="FieldRequerd" xml:space="preserve">
+    <value>Mandatory for filling out</value>
+  </data>
+  <data name="FillAllField" xml:space="preserve">
+    <value>Fill in all the fields</value>
+  </data>
+  <data name="FLMClient" xml:space="preserve">
+    <value>Full name of the client</value>
+  </data>
+  <data name="LoadingContent" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>login</value>
+  </data>
+  <data name="NewClient" xml:space="preserve">
+    <value>New client</value>
+  </data>
+  <data name="NewLabel" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NoFindCashRegister" xml:space="preserve">
+    <value>Find the cash register</value>
+  </data>
+  <data name="NumberPhone" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="OrderStateLabel" xml:space="preserve">
+    <value>Order condition</value>
+  </data>
+  <data name="OzLang" xml:space="preserve">
+    <value>Uzbek language</value>
+  </data>
+  <data name="PaidLabel" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="PayedSertificateLabel" xml:space="preserve">
+    <value>Payment by a certificate</value>
+  </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>personal information</value>
+  </data>
+  <data name="Pswd" xml:space="preserve">
+    <value>password</value>
+  </data>
+  <data name="ReadyLabel" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RusLang" xml:space="preserve">
+    <value>Russian language</value>
+  </data>
+  <data name="SalesSum" xml:space="preserve">
+    <value>The amount of purchases</value>
+  </data>
+  <data name="SelectedCard" xml:space="preserve">
+    <value>Select the card</value>
+  </data>
+  <data name="SelectedClientGroup" xml:space="preserve">
+    <value>Choose a customer group</value>
+  </data>
+  <data name="SelectedCourer" xml:space="preserve">
+    <value>Select the courier</value>
+  </data>
+  <data name="SubmisionTime" xml:space="preserve">
+    <value>Model time</value>
+  </data>
+  <data name="TakeAway" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+  <data name="WasCreateNewOrder" xml:space="preserve">
+    <value>A new order was created</value>
+  </data>
+  <data name="WasGuestDelete" xml:space="preserve">
+    <value>The guest was removed</value>
+  </data>
+  <data name="WriteCommentLabel" xml:space="preserve">
+    <value>Na'phatte Commenarch</value>
+  </data>
+  <data name="WrongPswdError" xml:space="preserve">
+    <value>wrong login or password</value>
+  </data>
+  <data name="Bonuses" xml:space="preserve">
+    <value>Bonuses</value>
+  </data>
+  <data name="EnterCountry" xml:space="preserve">
+    <value>Enter the country</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Commentary" xml:space="preserve">
+    <value>Commentary</value>
+  </data>
+  <data name="Courer" xml:space="preserve">
+    <value>Courier</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="Modifiers" xml:space="preserve">
+    <value>Modifiers</value>
+  </data>
+  <data name="Untie" xml:space="preserve">
+    <value>Untie</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Checks" xml:space="preserve">
+    <value>Checks</value>
+  </data>
+  <data name="EnterCommentOrder" xml:space="preserve">
+    <value>Comments on the order</value>
+  </data>
+  <data name="EnterCommentOrderLabel" xml:space="preserve">
+    <value>Enter a comment for your order</value>
+  </data>
+  <data name="ClosedStatusLabel" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="DeliveredLabel" xml:space="preserve">
+    <value>Delivered</value>
+  </data>
+  <data name="OnWayLabel" xml:space="preserve">
+    <value>Let's hit the road</value>
+  </data>
+  <data name="Prepared" xml:space="preserve">
+    <value>Prepared</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Product added</value>
+  </data>
+  <data name="EnterAComment" xml:space="preserve">
+    <value>Enter a comment</value>
+  </data>
+  <data name="EnterTheRemainingCash" xml:space="preserve">
+    <value>Enter the remaining cash</value>
+  </data>
+  <data name="ChooseATable" xml:space="preserve">
+    <value>Choose a table</value>
+  </data>
+  <data name="CreatingATransaction" xml:space="preserve">
+    <value>Creating a transaction</value>
+  </data>
+  <data name="CustomerData" xml:space="preserve">
+    <value>Customer data</value>
+  </data>
+  <data name="CustomerNameAndNumber" xml:space="preserve">
+    <value>Customer's name and number</value>
+  </data>
+  <data name="DateAndTime" xml:space="preserve">
+    <value>Date and time</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="EnterTheClientName" xml:space="preserve">
+    <value>Enter the client's name</value>
+  </data>
+  <data name="Expenditure" xml:space="preserve">
+    <value>Expenditure</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="NumberOfGuests" xml:space="preserve">
+    <value>Number of guests</value>
+  </data>
+  <data name="PlusNewBooking" xml:space="preserve">
+    <value>+ New booking</value>
+  </data>
+  <data name="SelectDuration" xml:space="preserve">
+    <value>Select the duration</value>
+  </data>
+  <data name="SelectTheNumberOfGuests" xml:space="preserve">
+    <value>Select the number of guests</value>
+  </data>
+  <data name="ToBook" xml:space="preserve">
+    <value>To book</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="EnterTheIpAddress" xml:space="preserve">
+    <value>Enter the ip address</value>
+  </data>
+  <data name="EnterTheTransactionAmount" xml:space="preserve">
+    <value>Enter the transaction amount</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="RegisteringAWiFiPrinter" xml:space="preserve">
+    <value>Registering a wi fi printer</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SelectTheType" xml:space="preserve">
+    <value>Select the type</value>
+  </data>
+  <data name="ShiftManagement" xml:space="preserve">
+    <value>Shift management</value>
+  </data>
+  <data name="TheDateOfTheAgreementIsDifferent" xml:space="preserve">
+    <value>The date of the agreement is different</value>
+  </data>
+  <data name="ToCreate" xml:space="preserve">
+    <value>To create</value>
+  </data>
+  <data name="Cashier" xml:space="preserve">
+    <value>Cashier</value>
+  </data>
+  <data name="CashlessPayment" xml:space="preserve">
+    <value>Cashless payment</value>
+  </data>
+  <data name="CashOnHand" xml:space="preserve">
+    <value>Cash on hand</value>
+  </data>
+  <data name="CashPayment" xml:space="preserve">
+    <value>Cash payment</value>
+  </data>
+  <data name="ChangeableTotal" xml:space="preserve">
+    <value>Changeable total</value>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>Corrupt</value>
+  </data>
+  <data name="ErrorWhenAuthorizingTheDevice" xml:space="preserve">
+    <value>Error when authorizing the device</value>
+  </data>
+  <data name="FailedLogin" xml:space="preserve">
+    <value>Failed login attempt, try again later</value>
+  </data>
+  <data name="Kz" xml:space="preserve">
+    <value>Kazakh</value>
+  </data>
+  <data name="MistakeIsImpossibleToClose" xml:space="preserve">
+    <value>Mistake! It is impossible to close the cash shift</value>
+  </data>
+  <data name="MistakeTheBalance" xml:space="preserve">
+    <value>Mistake! the balance of funds in the cash register is not specified</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>not found</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>Printed</value>
+  </data>
+  <data name="ResultsOfOperations" xml:space="preserve">
+    <value>Results of operations</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="SentForPrintingToThePrinter" xml:space="preserve">
+    <value>Sent for printing to the printer</value>
+  </data>
+  <data name="ShiftReport" xml:space="preserve">
+    <value>Shift Report</value>
+  </data>
+  <data name="TheBeginningShift" xml:space="preserve">
+    <value>The beginning of the shift</value>
+  </data>
+  <data name="TheEstimatedAmountInTheCashRegisterDoesNotMatch" xml:space="preserve">
+    <value>The estimated amount in the cash register does not match</value>
+  </data>
+  <data name="TheOrderIsOpen" xml:space="preserve">
+    <value>The Order Is Open</value>
+  </data>
+  <data name="TheOrderWasReturned" xml:space="preserve">
+    <value>The order was returned</value>
+  </data>
+  <data name="TheReportWasDevice" xml:space="preserve">
+    <value>The report was compiled from the device</value>
+  </data>
+  <data name="TotalAmountToBePaid" xml:space="preserve">
+    <value>Total amount to be paid</value>
+  </data>
+  <data name="TotalDocuments" xml:space="preserve">
+    <value>Total documents</value>
+  </data>
+  <data name="TypesOfPayment" xml:space="preserve">
+    <value>Types of payment</value>
+  </data>
+  <data name="YouDontWorkTerminal" xml:space="preserve">
+    <value>You do not have access to work at the terminal</value>
+  </data>
+  <data name="entrance" xml:space="preserve">
+    <value>entrance, floor, apartment, etc.</value>
+  </data>
+  <data name="OrderIsPaid" xml:space="preserve">
+    <value>Order is paid</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Clear cache</value>
+  </data>
+  <data name="CurrentHall" xml:space="preserve">
+    <value>Current Hall</value>
+  </data>
+  <data name="InTheEstablishment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LogOutOfApp" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Device name</value>
+  </data>
+  <data name="IpAdress" xml:space="preserve">
+    <value>Ip adress</value>
+  </data>
+  <data name="SelectOrderType" xml:space="preserve">
+    <value>Select Order Type</value>
+  </data>
+  <data name="SelectType" xml:space="preserve">
+    <value>Select type</value>
+  </data>
+  <data name="Take_away" xml:space="preserve">
+    <value>Takeaway</value>
+  </data>
+</root>

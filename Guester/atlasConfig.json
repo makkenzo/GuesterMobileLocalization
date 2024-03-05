@@ -1,0 +1,9 @@
+﻿{
+  "appId": "guesterapp-uxcdb",
+  "appUrl": "https://realm.mongodb.com/groups/639d797542882a4bb56bd793/apps/6527b9b40abf2d48ff43baa8",
+  "baseUrl": "https://realm.mongodb.com",
+  "clientApiBaseUrl": "https://eu-west-1.aws.realm.mongodb.com",
+  "dataApiBaseUrl": "https://eu-west-1.aws.data.mongodb-api.com",
+  "dataExplorerLink": "https://cloud.mongodb.com/links/639d797542882a4bb56bd793/explorer/Cluster1/database/collection/find",
+  "dataSourceName": "mongodb-atlas"
+}

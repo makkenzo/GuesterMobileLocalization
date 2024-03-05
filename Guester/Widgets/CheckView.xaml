@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mopups:PopupPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:models="clr-namespace:Guester.Models"
+                xmlns:Mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+                x:Class="Guester.Widgets.CheckView"
+                xmlns:fa="clr-namespace:FontAwesome"
+                xmlns:vm="clr-namespace:Guester.ViewModels"
+                xmlns:res="clr-namespace:Guester.Resources"
+                Background="{StaticResource TransperentDark}"
+                BackgroundInputTransparent="False"
+                CloseWhenBackgroundIsClicked="True">
+    <Mopups:PopupPage.BindingContext>
+        <vm:CheckViewModel/>
+    </Mopups:PopupPage.BindingContext>
+    
+    <Border VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource TransperentDark}" Margin="0,50" >
+        <Grid  RowDefinitions=".1*,*"  RowSpacing="0">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                <Border Padding="20,0" BackgroundColor="Transparent">
+                    <Label TextColor="White" Text="{x:Static fa:FontAwesomeIcons.Xmark}"
+                           FontFamily="FAS" VerticalTextAlignment="Center" HorizontalOptions="Start" 
+                           FontSize="Title" >
+
+                    </Label>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                    </Border.GestureRecognizers>
+                </Border>
+                <Label x:Name="shareButton" TextColor="White" Text="{x:Static fa:FontAwesomeIcons.ShareNodes}" 
+                           FontFamily="FAS" VerticalTextAlignment="Center" HorizontalOptions="End" 
+                           Margin="20,0" FontSize="Title">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="Share_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Frame Padding="10" Grid.Row="1" BackgroundColor="White" CornerRadius="0">
+                <WebView x:Name="webView"  Source="{Binding HtmlWebViewSource}"   />
+            </Frame>
+
+        </Grid>
+    </Border>
+</Mopups:PopupPage>

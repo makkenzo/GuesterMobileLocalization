@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Tamplates.WarehouseContent"
+             xmlns:model="clr-namespace:Guester.Models"
+             xmlns:fa="clr-namespace:FontAwesome"
+             xmlns:res="clr-namespace:Guester.Resources"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:controll="clr-namespace:Guester.Tamplates"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+             xmlns:data="clr-namespace:Syncfusion.Maui.DataSource;assembly=Syncfusion.Maui.DataSource" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView" 
+             x:DataType="vm:WarehouseContentViewModel"
+             xmlns:l="clr-namespace:CustomLayouts"
+             xmlns:helpers="clr-namespace:Guester.Helpers">
+
+    <ContentView.Resources>
+        
+            <DataTemplate x:Key="ItemTemplate" x:DataType="model:RemainsProduct">
+                <Border HorizontalOptions="Start" HeightRequest="250" WidthRequest="200" Padding="1" StrokeShape="RoundRectangle 16" >
+                    <Grid RowDefinitions="*,50,30" >
+                        <Image Grid.RowSpan="3" Source="{Binding Product.Picture, Converter={helpers:ImageSourceConverter}}" Aspect="AspectFill"   />
+                        <!--<Border Grid.Row="1" Grid.RowSpan="3" Stroke="" BackgroundColor="{StaticResource PrimaryTextLight}" Opacity="0.6" StrokeShape="RoundRectangle 0"/>-->
+                        <BoxView Grid.Row="1" Grid.RowSpan="2" BackgroundColor="#90000000"/>
+                        <Label Grid.Row="1" Text="{Binding Product.Name}" TextColor="White" FontAttributes="Bold" Margin="10,5"/>
+                        <Label Grid.Row="2" Text="{Binding Product.CostPrice,StringFormat='{N2 тг}'}" TextColor="White" HorizontalOptions="End" FontSize="Small" 
+                               Margin="10,0"/> 
+                    </Grid>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ProductTemplate" x:DataType="model:RemainsProduct">
+                
+                <Label  FontAttributes="Bold" FontSize="16" Opacity="0.7" VerticalOptions="Center" Margin="40,0,0,0" >
+                    <Label.FormattedText>
+                        <FormattedString >
+                            <Span Text="{Binding Product.Name}"  FontAttributes="Bold"/>
+                            <Span Text=" " />
+                            <Span Text="{Binding Amount}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+               
+            </DataTemplate>
+       
+    </ContentView.Resources>
+
+    <Grid   ColumnDefinitions=".4*,*"  >
+        <Border Margin="0,15" StrokeShape="RoundRectangle 0 8 0 8" >
+        
+            
+                
+                <!--<dxc:DXCollectionView   Margin="0,15"  ItemsSource="{Binding  ActualRemains.RemainsProducts, Mode=OneWay}" AllowGroupCollapse="True"  
+                                                  ItemTemplate="{StaticResource ProductTemplate}" ItemSpacing="4"  >
+                    <dxc:DXCollectionView.GroupDescription >
+                        <dxc:GroupDescription FieldName="DisplayName" SortOrder="Descending" />
+                    </dxc:DXCollectionView.GroupDescription>
+                    <dxc:DXCollectionView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout  MinimumHeightRequest="20" Spacing="10" x:DataType="dxc:GroupInfo"  >
+                                <Label Text="{x:Static fa:FontAwesomeIcons.AngleUp}" FontFamily="FAS"  VerticalOptions="Center" Margin="0,5">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsCollapsed}" Value="true">
+                                            <Setter Property="Text" Value="{x:Static fa:FontAwesomeIcons.AngleDown}"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                <Label  VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="{OnPlatform iOS=Subtitle, Android=Medium}" Text="{Binding GroupValue}"/>
+
+
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer  Command="{Binding Source={RelativeSource AncestorType={x:Type vm:WarehouseContentViewModel}}, Path=SelectCategoryCommand}" CommandParameter="{Binding .}"/>
+                            </HorizontalStackLayout.GestureRecognizers>
+                            
+                            
+                        </HorizontalStackLayout>
+                        </DataTemplate>
+                    </dxc:DXCollectionView.GroupHeaderTemplate>
+                </dxc:DXCollectionView>-->
+                <syncfusion:SfListView x:Name="WarehouseItemList" ItemsSource="{Binding  ActualRemains.RemainsProducts, Mode=OneWay}" AllowGroupExpandCollapse="True"  
+                                                  ItemTemplate="{StaticResource ProductTemplate}" ItemSpacing="1" ItemSize="25"   AutoFitMode="None"  IsStickyHeader="True" IsLazyLoading="True" >
+                    <syncfusion:SfListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="{StaticResource Primary}" HeightRequest="45">
+                                <Label VerticalOptions="Center" HorizontalOptions="Center"
+                                    Text="{x:Static res:AppResources.LeftoversWarehouse}" FontAttributes="Bold"
+                                    FontSize="18" TextColor="White" />
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
+                            </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfListView.HeaderTemplate>
+                    <syncfusion:SfListView.GroupHeaderTemplate >
+                        <DataTemplate>
+                            <HorizontalStackLayout   MinimumHeightRequest="20" Spacing="10" x:DataType="{x:Null}" >
+                                <Label Text="{x:Static fa:FontAwesomeIcons.AngleUp}" FontFamily="FAS"  VerticalOptions="Center" Margin="5">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsExpand}" Value="true">
+                                            <Setter Property="Text" Value="{x:Static fa:FontAwesomeIcons.AngleDown}"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                <Label  VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="{OnPlatform iOS=Subtitle, Android=Medium}" Text="{Binding Key}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer  Command="{Binding Source={RelativeSource AncestorType={x:Type vm:WarehouseContentViewModel}}, Path=SelectCategoryCommand}"  CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </syncfusion:SfListView.GroupHeaderTemplate>
+                    <syncfusion:SfListView.DataSource>
+                        <data:DataSource>
+                            <data:DataSource.SortDescriptors>
+                                <data:SortDescriptor PropertyName="DisplayName" Direction="Descending"/> 
+                            </data:DataSource.SortDescriptors>
+                            <data:DataSource.GroupDescriptors>
+                                <data:GroupDescriptor PropertyName="DisplayName" />
+                            </data:DataSource.GroupDescriptors>
+                        </data:DataSource>
+                    </syncfusion:SfListView.DataSource>
+                </syncfusion:SfListView>
+
+            <!--<CollectionView IsGrouped="True" ItemsSource="{Binding RemainsProductsGrouped}" ItemTemplate="{StaticResource ProductTemplate}" >
+                <CollectionView.Header>
+                    
+                        <Grid BackgroundColor="{StaticResource Primary}" HeightRequest="45">
+                            <Label LineBreakMode="NoWrap"
+                                    Text="Остатки на складе" FontAttributes="Bold"
+                                    FontSize="18" TextColor="White" HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    
+                </CollectionView.Header>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout  MinimumHeightRequest="20" Spacing="10" x:DataType="{x:Null}" >
+                            <Label Text="{x:Static fa:FontAwesomeIcons.AngleUp}" FontFamily="FAS"  VerticalOptions="Center" Margin="5">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding IsExpand}" Value="true">
+                                        <Setter Property="Text" Value="{x:Static fa:FontAwesomeIcons.AngleDown}"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label  VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="{OnPlatform iOS=Subtitle, Android=Medium}"
+                                    Text="{Binding Key}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding Source={RelativeSource AncestorType={x:Type vm:WarehouseContentViewModel}}, Path=SelectCategoryCommand}"  CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+            </CollectionView>-->
+
+        </Border>
+      
+
+        <!--<CollectionView Grid.Column="1" ItemsSource="{Binding RemainsProducts,Mode=OneWay}" ItemTemplate="{StaticResource ItemTemplate}"  Margin="20,110,20,20" VerticalOptions="Start"   >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="4" HorizontalItemSpacing="20" VerticalItemSpacing="20"   />
+            </CollectionView.ItemsLayout>
+        </CollectionView>-->
+        <ScrollView Grid.Column="1" Margin="20,85,0,5">
+            <l:HorizontalWrapLayout    BindableLayout.ItemsSource="{Binding RemainsProducts,Mode=OneWay}"
+                                BindableLayout.ItemTemplate="{StaticResource ItemTemplate}" Spacing="10">
+
+            </l:HorizontalWrapLayout>
+        </ScrollView>
+        
+
+        <Grid Grid.Column="1" Padding="20" VerticalOptions="Start" ColumnDefinitions="*,auto,auto" ColumnSpacing="15">
+                        <HorizontalStackLayout VerticalOptions="Center">
+              
+                            <Label Text="{Binding CategoryTitle}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16" Opacity="0.7" />
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <!--<TapGestureRecognizer Command="{Binding GoToPreviousCategoryCommand}" />-->
+                            </HorizontalStackLayout.GestureRecognizers>
+                        </HorizontalStackLayout>
+                        <Border Grid.Column="1" HorizontalOptions="End" HeightRequest="45" VerticalOptions="Start" Padding="5,0" >
+                            <Grid >
+                              <Entry Placeholder="{x:Static res:AppResources.EnterText}" Text="{Binding SearchTextProducts}"  FontSize="16" WidthRequest="200" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{x:Static fa:FontAwesomeIcons.MagnifyingGlass}" FontFamily="FAS" FontSize="16" VerticalTextAlignment="Center" HorizontalOptions="End" Margin="20,0"/>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Column="2" HorizontalOptions="Center" HeightRequest="45" VerticalOptions="Start" Padding="10,14" >
+                            <Label Text="{x:Static fa:FontAwesomeIcons.Barcode}" FontFamily="FAS" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalOptions="End" Margin="20,0"/>
+
+                        </Border>    
+
+                         
+
+                    </Grid>
+
+    </Grid>
+</ContentView>
+

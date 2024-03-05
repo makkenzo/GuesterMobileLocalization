@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCommentToReceipt" xml:space="preserve">
+    <value>Buyurtmangizga sharh qo'shing</value>
+  </data>
+  <data name="AddedProductQuantity" xml:space="preserve">
+    <value>Mahsulot miqdorini qo'shdi</value>
+  </data>
+  <data name="AddGuest" xml:space="preserve">
+    <value>MEHMON QO'SHISH</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Hammasi</value>
+  </data>
+  <data name="AllOrders" xml:space="preserve">
+    <value>Barcha buyurtmalar</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>Barcha mahsulotlar</value>
+  </data>
+  <data name="AllReceipts" xml:space="preserve">
+    <value>Barcha cheklar</value>
+  </data>
+  <data name="AllShifts" xml:space="preserve">
+    <value>Barcha smenalar</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Miqdori</value>
+  </data>
+  <data name="AttempDeleteLastGuest" xml:space="preserve">
+    <value>Oxirgi mehmonni olib tashlashga urinish</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Orqaga</value>
+  </data>
+  <data name="Bakery" xml:space="preserve">
+    <value>Pishirish</value>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="BillClosed" xml:space="preserve">
+    <value>Hisob yopildi</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Rezervasyonlar</value>
+  </data>
+  <data name="Buns" xml:space="preserve">
+    <value>Bulochkalar</value>
+  </data>
+  <data name="ByBankCard" xml:space="preserve">
+    <value>Bank kartasi</value>
+  </data>
+  <data name="Cakes" xml:space="preserve">
+    <value>Keklar</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Bekor qilish</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>bekor qilindi</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>Buyurtmani bekor qilish</value>
+  </data>
+  <data name="Cappuccino" xml:space="preserve">
+    <value>Kapuchino</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Naqd pul</value>
+  </data>
+  <data name="CashShift" xml:space="preserve">
+    <value>Kassa almashinuvi</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>Sertifikat bilan</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Taslim bo'lish:</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Mijoz</value>
+  </data>
+  <data name="CloseShift" xml:space="preserve">
+    <value>Smenani yoping</value>
+  </data>
+  <data name="CloseWithoutPayment" xml:space="preserve">
+    <value>To'lovsiz yoping</value>
+  </data>
+  <data name="Coffee" xml:space="preserve">
+    <value>Qahva</value>
+  </data>
+  <data name="Cola" xml:space="preserve">
+    <value>Kola</value>
+  </data>
+  <data name="CreateTransaction" xml:space="preserve">
+    <value>Tranzaksiya yarating</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Yetkazib berildi</value>
+  </data>
+  <data name="DeliveryAddress" xml:space="preserve">
+    <value>Yetkazib berish manzili</value>
+  </data>
+  <data name="DeliveryTime" xml:space="preserve">
+    <value>Yetkazib berish vaqti</value>
+  </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Qurilmalar</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Chegirma</value>
+  </data>
+  <data name="Drinks" xml:space="preserve">
+    <value>Ichimliklar</value>
+  </data>
+  <data name="Eight" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EmplyeeShifts" xml:space="preserve">
+    <value>Xodimlarni almashtirish</value>
+  </data>
+  <data name="EndShift" xml:space="preserve">
+    <value>Smenani tugating</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EnterText" xml:space="preserve">
+    <value>Matnni kiriting</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Uskunalar</value>
+  </data>
+  <data name="ErrorAddingProduct" xml:space="preserve">
+    <value>Mahsulotni qo'shishda xato</value>
+  </data>
+  <data name="Espresso" xml:space="preserve">
+    <value>Espresso</value>
+  </data>
+  <data name="Fanta" xml:space="preserve">
+    <value>Fanta</value>
+  </data>
+  <data name="Fiscalization" xml:space="preserve">
+    <value>Fiskalizatsiya</value>
+  </data>
+  <data name="Five" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Four" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Xususiyatlari</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Mehmon</value>
+  </data>
+  <data name="GuestAdded" xml:space="preserve">
+    <value>Mehmon qo'shildi</value>
+  </data>
+  <data name="GuestQuantity" xml:space="preserve">
+    <value>Mehmonlar soni</value>
+  </data>
+  <data name="Hallmap" xml:space="preserve">
+    <value>Zal xaritasi</value>
+  </data>
+  <data name="IceCream" xml:space="preserve">
+    <value>Muzqaymoq</value>
+  </data>
+  <data name="InEnvy" xml:space="preserve">
+    <value>Muassasada</value>
+  </data>
+  <data name="InRestaurant" xml:space="preserve">
+    <value>Restoranda</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Yaroqsiz yoki yaroqsiz kod</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventarizatsiya</value>
+  </data>
+  <data name="InWay" xml:space="preserve">
+    <value>Yo'lda</value>
+  </data>
+  <data name="KZT" xml:space="preserve">
+    <value>tg</value>
+  </data>
+  <data name="Latte" xml:space="preserve">
+    <value>Latte</value>
+  </data>
+  <data name="LeftoversWarehouse" xml:space="preserve">
+    <value>Ombordagi qoldiqlar</value>
+  </data>
+  <data name="MixedPayment" xml:space="preserve">
+    <value>Kulgili to'lov</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Oy</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nomi</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Yangi</value>
+  </data>
+  <data name="NewBooking" xml:space="preserve">
+    <value>Yangi bron</value>
+  </data>
+  <data name="NewOrder" xml:space="preserve">
+    <value>Yangi buyurtma</value>
+  </data>
+  <data name="Nine" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Yo'q</value>
+  </data>
+  <data name="NumberTwentyFive" xml:space="preserve">
+    <value>№25</value>
+  </data>
+  <data name="One" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Onlayn</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ochiq</value>
+  </data>
+  <data name="OpenMoneyBox" xml:space="preserve">
+    <value>Pul qutisini oching</value>
+  </data>
+  <data name="OpenOrder" xml:space="preserve">
+    <value>Buyurtma ko'rilmoqda</value>
+  </data>
+  <data name="OrCancelled" xml:space="preserve">
+    <value>bekor qilindi</value>
+  </data>
+  <data name="OrClossed" xml:space="preserve">
+    <value>Yopiq</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Buyurtma</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Buyurtmalar</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Buyurtma turi</value>
+  </data>
+  <data name="OrderUnderNumber" xml:space="preserve">
+    <value>Buyurtma raqami bo'yicha</value>
+  </data>
+  <data name="OrderWasClosed" xml:space="preserve">
+    <value>Buyurtma yopildi</value>
+  </data>
+  <data name="OrderWasClossedWithoutPayment" xml:space="preserve">
+    <value>Buyurtma to'lovsiz yopildi</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Boshqalar</value>
+  </data>
+  <data name="Oz" xml:space="preserve">
+    <value>OZ</value>
+  </data>
+  <data name="PaidByCard" xml:space="preserve">
+    <value>Karta bilan to'langan</value>
+  </data>
+  <data name="PaidInCash" xml:space="preserve">
+    <value>Naqd pul bilan to'langan</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>To'lash</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>To'lov</value>
+  </data>
+  <data name="PaymentInCard" xml:space="preserve">
+    <value>Karta bilan to'lash</value>
+  </data>
+  <data name="PaymentInCash" xml:space="preserve">
+    <value>Naqd pul bilan to'lash</value>
+  </data>
+  <data name="PreviousDays" xml:space="preserve">
+    <value>Oldingi kunlar</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Narxi</value>
+  </data>
+  <data name="PrintReceipt" xml:space="preserve">
+    <value>Chekni chop eting</value>
+  </data>
+  <data name="ProductWasRemoved" xml:space="preserve">
+    <value>Mahsulot olib tashlandi</value>
+  </data>
+  <data name="Promotions" xml:space="preserve">
+    <value>Aktsiyalar</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Miqdori</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Tayyor</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Chek</value>
+  </data>
+  <data name="ReceiptArchive" xml:space="preserve">
+    <value>Cheklar arxivi</value>
+  </data>
+  <data name="ReceiptList" xml:space="preserve">
+    <value>Bu erda cheklar ro'yxati ko'rsatiladi</value>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>Chek №</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>Tekshirish turi</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>Qaytish</value>
+  </data>
+  <data name="Refunds" xml:space="preserve">
+    <value>Qaytish</value>
+  </data>
+  <data name="Returnable" xml:space="preserve">
+    <value>Qaytish</value>
+  </data>
+  <data name="Rus" xml:space="preserve">
+    <value>Ru</value>
+  </data>
+  <data name="RussianLanguage" xml:space="preserve">
+    <value>Ru</value>
+  </data>
+  <data name="Russion" xml:space="preserve">
+    <value>Ru tili</value>
+  </data>
+  <data name="Selling" xml:space="preserve">
+    <value>Sotilgan</value>
+  </data>
+  <data name="Seven" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Six" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SomeZone" xml:space="preserve">
+    <value>Qandaydir zona</value>
+  </data>
+  <data name="Sprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Succes" xml:space="preserve">
+    <value>Tayyor</value>
+  </data>
+  <data name="SymbolNumber" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Jadval</value>
+  </data>
+  <data name="TableNumber" xml:space="preserve">
+    <value>Jadval №</value>
+  </data>
+  <data name="Tables" xml:space="preserve">
+    <value>Jadvallar</value>
+  </data>
+  <data name="Takeout" xml:space="preserve">
+    <value>Olib ketish</value>
+  </data>
+  <data name="Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TenThousand" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="Three" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Joriy</value>
+  </data>
+  <data name="TookAwayQuantityProduct" xml:space="preserve">
+    <value>Mahsulot miqdorini oldi</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Jami</value>
+  </data>
+  <data name="TotalToPay" xml:space="preserve">
+    <value>To'lov uchun</value>
+  </data>
+  <data name="TwentyThousand" xml:space="preserve">
+    <value>20000</value>
+  </data>
+  <data name="Two" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TypesOfOrders" xml:space="preserve">
+    <value>Buyurtma turlari</value>
+  </data>
+  <data name="Us" xml:space="preserve">
+    <value>Uz</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Foydalanuvchi</value>
+  </data>
+  <data name="Uzbek" xml:space="preserve">
+    <value>Oz</value>
+  </data>
+  <data name="WaitingTheActivationDevice" xml:space="preserve">
+    <value>Qurilmani faollashtirishni kutmoqdamiz</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Ombor</value>
+  </data>
+  <data name="WasCancelled" xml:space="preserve">
+    <value>bekor qilindi</value>
+  </data>
+  <data name="WasCreated" xml:space="preserve">
+    <value>yaratilgan</value>
+  </data>
+  <data name="WasDeleted" xml:space="preserve">
+    <value>olib tashlandi</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Hafta</value>
+  </data>
+  <data name="WithoutPayment" xml:space="preserve">
+    <value>To'lovsiz</value>
+  </data>
+  <data name="Xreport" xml:space="preserve">
+    <value>X - hisobot</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ha</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Zreport" xml:space="preserve">
+    <value>Z - hisobot</value>
+  </data>
+  <data name="EnteringSummLessError" xml:space="preserve">
+    <value>Kiritilgan summa chekdagidan kamroq</value>
+  </data>
+  <data name="ChoseLang" xml:space="preserve">
+    <value>Tilni tanlang</value>
+  </data>
+  <data name="AdditionalyDelivery" xml:space="preserve">
+    <value>Bundan tashqari: kirish, pol, kvartira va boshqalar.</value>
+  </data>
+  <data name="AddNewAddress" xml:space="preserve">
+    <value>Yangi manzil qo'shing</value>
+  </data>
+  <data name="AddNewCard" xml:space="preserve">
+    <value>Yangi xarita qo'shing</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Manzil</value>
+  </data>
+  <data name="AddToCheck" xml:space="preserve">
+    <value>Chekqa qo'shing</value>
+  </data>
+  <data name="AllItems" xml:space="preserve">
+    <value>Barcha tovarlar</value>
+  </data>
+  <data name="AuthorizationDevice" xml:space="preserve">
+    <value>Qurilmaning avtorizatsiyasi</value>
+  </data>
+  <data name="BalanceOfMoneyAfterCollection" xml:space="preserve">
+    <value>Kassadagi pul miqdori</value>
+  </data>
+  <data name="BirthDayDate" xml:space="preserve">
+    <value>Tug'ilgan kun</value>
+  </data>
+  <data name="CantCreateCashRegisterError" xml:space="preserve">
+    <value>Naqd pul registrini yaratib bo'lmadi</value>
+  </data>
+  <data name="CantEndCashRegister" xml:space="preserve">
+    <value>Shiftni yopishning iloji yo'q, urinishlar soni oshib ketdi</value>
+  </data>
+  <data name="CantStartCashRegister" xml:space="preserve">
+    <value>Shiftni boshlashning iloji yo'q</value>
+  </data>
+  <data name="CardHall" xml:space="preserve">
+    <value>Zal</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Karta raqami</value>
+  </data>
+  <data name="ClientBalance" xml:space="preserve">
+    <value>Balans mijoz</value>
+  </data>
+  <data name="ClientCard" xml:space="preserve">
+    <value>Mijoz kartasi</value>
+  </data>
+  <data name="ClientEmail" xml:space="preserve">
+    <value>Elektron pochta mijozi</value>
+  </data>
+  <data name="ClientGroup" xml:space="preserve">
+    <value>Mijozlar guruhi</value>
+  </data>
+  <data name="ClosedLabel" xml:space="preserve">
+    <value>Yopiq</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Tasdiqlamoq</value>
+  </data>
+  <data name="ConfirmLabel" xml:space="preserve">
+    <value>Tasdiqlamoq</value>
+  </data>
+  <data name="CountryLabel" xml:space="preserve">
+    <value>Tomon</value>
+  </data>
+  <data name="DeliveryDetail" xml:space="preserve">
+    <value>Yetkazib berish tafsilotlari</value>
+  </data>
+  <data name="DeliveryLabel" xml:space="preserve">
+    <value>Yetkazib bermoq</value>
+  </data>
+  <data name="DeliveryZone" xml:space="preserve">
+    <value>Yetkazib berish zonasi</value>
+  </data>
+  <data name="DetailDelivery" xml:space="preserve">
+    <value>Oziq-ovqat tafsilotlari</value>
+  </data>
+  <data name="DeviceAuthLabel" xml:space="preserve">
+    <value>Avtorizatsiya ma'lumotlarini shaxsiy hisobingizda ko'rish mumkin</value>
+  </data>
+  <data name="En" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EngLang" xml:space="preserve">
+    <value>Eng</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Manzilni kiriting</value>
+  </data>
+  <data name="EnterCardNumber" xml:space="preserve">
+    <value>Karta raqamini kiriting</value>
+  </data>
+  <data name="EnterCity" xml:space="preserve">
+    <value>Shaharga kiring</value>
+  </data>
+  <data name="EnterClientEmail" xml:space="preserve">
+    <value>Elektron pochta mijozini kiriting</value>
+  </data>
+  <data name="EnterFlmClient" xml:space="preserve">
+    <value>Mijoz ismini kiriting</value>
+  </data>
+  <data name="EnterLogin" xml:space="preserve">
+    <value>Kirish</value>
+  </data>
+  <data name="EnterPswd" xml:space="preserve">
+    <value>Parolni kiriting</value>
+  </data>
+  <data name="EnterSum" xml:space="preserve">
+    <value>Miqdorni kiriting</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>Maydon</value>
+  </data>
+  <data name="FieldRequerd" xml:space="preserve">
+    <value>To'ldirish majburiyligi</value>
+  </data>
+  <data name="FillAllField" xml:space="preserve">
+    <value>Barcha maydonlarni to'ldiring</value>
+  </data>
+  <data name="FLMClient" xml:space="preserve">
+    <value>Mijozning to'liq nomi</value>
+  </data>
+  <data name="LoadingContent" xml:space="preserve">
+    <value>Yuklamoq</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>tizimga kirish</value>
+  </data>
+  <data name="NewClient" xml:space="preserve">
+    <value>Yangi mijoz</value>
+  </data>
+  <data name="NewLabel" xml:space="preserve">
+    <value>Yangi</value>
+  </data>
+  <data name="NoFindCashRegister" xml:space="preserve">
+    <value>Kassalarni toping</value>
+  </data>
+  <data name="NumberPhone" xml:space="preserve">
+    <value>Telefon raqami</value>
+  </data>
+  <data name="OrderStateLabel" xml:space="preserve">
+    <value>Buyurtma shart</value>
+  </data>
+  <data name="OzLang" xml:space="preserve">
+    <value>O'zbek tili</value>
+  </data>
+  <data name="PaidLabel" xml:space="preserve">
+    <value>To'langan</value>
+  </data>
+  <data name="PayedSertificateLabel" xml:space="preserve">
+    <value>Sertifikat tomonidan to'lov</value>
+  </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Shaxsiy ma'lumot</value>
+  </data>
+  <data name="Pswd" xml:space="preserve">
+    <value>parol</value>
+  </data>
+  <data name="ReadyLabel" xml:space="preserve">
+    <value>Tayyor</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Ro'yxatga olmoq</value>
+  </data>
+  <data name="RusLang" xml:space="preserve">
+    <value>Rus tili</value>
+  </data>
+  <data name="SalesSum" xml:space="preserve">
+    <value>Xaridlar miqdori</value>
+  </data>
+  <data name="SelectedCard" xml:space="preserve">
+    <value>Kartani tanlang</value>
+  </data>
+  <data name="SelectedClientGroup" xml:space="preserve">
+    <value>Mijozlar guruhini tanlang</value>
+  </data>
+  <data name="SelectedCourer" xml:space="preserve">
+    <value>Kuryerni tanlang</value>
+  </data>
+  <data name="SubmisionTime" xml:space="preserve">
+    <value>Model vaqti</value>
+  </data>
+  <data name="TakeAway" xml:space="preserve">
+    <value>Mahorat</value>
+  </data>
+  <data name="WasCreateNewOrder" xml:space="preserve">
+    <value>Yangi buyurtma yaratildi</value>
+  </data>
+  <data name="WasGuestDelete" xml:space="preserve">
+    <value>Mehmon olib tashlandi</value>
+  </data>
+  <data name="WriteCommentLabel" xml:space="preserve">
+    <value>Naafatte Comencharx</value>
+  </data>
+  <data name="WrongPswdError" xml:space="preserve">
+    <value>Noto'g'ri login yoki parol</value>
+  </data>
+  <data name="Bonuses" xml:space="preserve">
+    <value>Bonuslar</value>
+  </data>
+  <data name="EnterCountry" xml:space="preserve">
+    <value>Mamlakatga kiring</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Shahar</value>
+  </data>
+  <data name="Commentary" xml:space="preserve">
+    <value>Sharh</value>
+  </data>
+  <data name="Courer" xml:space="preserve">
+    <value>Kurer</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>daqiqa</value>
+  </data>
+  <data name="Modifiers" xml:space="preserve">
+    <value>Molifiter</value>
+  </data>
+  <data name="Untie" xml:space="preserve">
+    <value>Yechmoq</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standart</value>
+  </data>
+  <data name="Checks" xml:space="preserve">
+    <value>Tekshirishlar</value>
+  </data>
+  <data name="EnterCommentOrder" xml:space="preserve">
+    <value>Buyurtma bo'yicha sharhlar</value>
+  </data>
+  <data name="EnterCommentOrderLabel" xml:space="preserve">
+    <value>Buyurtmangiz uchun sharh yozing</value>
+  </data>
+  <data name="ClosedStatusLabel" xml:space="preserve">
+    <value>Yopish</value>
+  </data>
+  <data name="DeliveredLabel" xml:space="preserve">
+    <value>Yetkazib berildi</value>
+  </data>
+  <data name="OnWayLabel" xml:space="preserve">
+    <value>Keling, yo'lga chiqaylik</value>
+  </data>
+  <data name="Prepared" xml:space="preserve">
+    <value>Tayyorlangan</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Mahsulot qo'shildi</value>
+  </data>
+  <data name="EnterAComment" xml:space="preserve">
+    <value>Sharhni kiriting</value>
+  </data>
+  <data name="EnterTheRemainingCash" xml:space="preserve">
+    <value>Naqd pul qoldig'ini kiriting</value>
+  </data>
+  <data name="ChooseATable" xml:space="preserve">
+    <value>Stolni tanlang</value>
+  </data>
+  <data name="CreatingATransaction" xml:space="preserve">
+    <value>Tranzaktsiyani yaratish</value>
+  </data>
+  <data name="CustomerData" xml:space="preserve">
+    <value>Mijoz ma'lumotlari</value>
+  </data>
+  <data name="CustomerNameAndNumber" xml:space="preserve">
+    <value>Mijozning ismi va raqami</value>
+  </data>
+  <data name="DateAndTime" xml:space="preserve">
+    <value>Sana va vaqt</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Davomiyligi</value>
+  </data>
+  <data name="EnterTheClientName" xml:space="preserve">
+    <value>Mijoz nomini kiriting</value>
+  </data>
+  <data name="Expenditure" xml:space="preserve">
+    <value>Iste'mol</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>Ilova</value>
+  </data>
+  <data name="NumberOfGuests" xml:space="preserve">
+    <value>Mehmonlar soni</value>
+  </data>
+  <data name="PlusNewBooking" xml:space="preserve">
+    <value>+ Yangi bron qilish</value>
+  </data>
+  <data name="SelectDuration" xml:space="preserve">
+    <value>Davomiyligini tanlang</value>
+  </data>
+  <data name="SelectTheNumberOfGuests" xml:space="preserve">
+    <value>Mehmonlar sonini tanlang</value>
+  </data>
+  <data name="ToBook" xml:space="preserve">
+    <value>Kitob</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>Yig'ish</value>
+  </data>
+  <data name="EnterTheIpAddress" xml:space="preserve">
+    <value>Ip manzilini kiriting</value>
+  </data>
+  <data name="EnterTheTransactionAmount" xml:space="preserve">
+    <value>Tranzaksiya miqdorini kiriting</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Bildirishnomalar</value>
+  </data>
+  <data name="RegisteringAWiFiPrinter" xml:space="preserve">
+    <value>Wi-Fi printerini ro'yxatdan o'tkazish</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Saqlash</value>
+  </data>
+  <data name="SelectTheType" xml:space="preserve">
+    <value>Turini tanlang</value>
+  </data>
+  <data name="ShiftManagement" xml:space="preserve">
+    <value>Smenalarni boshqarish</value>
+  </data>
+  <data name="TheDateOfTheAgreementIsDifferent" xml:space="preserve">
+    <value>Shartnoma sanasi boshqacha</value>
+  </data>
+  <data name="ToCreate" xml:space="preserve">
+    <value>Yaratish</value>
+  </data>
+  <data name="Cashier" xml:space="preserve">
+    <value>Kassir</value>
+  </data>
+  <data name="CashlessPayment" xml:space="preserve">
+    <value>Naqd pulsiz to'lov</value>
+  </data>
+  <data name="CashOnHand" xml:space="preserve">
+    <value>Kassadagi naqd pul</value>
+  </data>
+  <data name="CashPayment" xml:space="preserve">
+    <value>Naqd pul</value>
+  </data>
+  <data name="ChangeableTotal" xml:space="preserve">
+    <value>O'zgartirish natijasi</value>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>Sotish</value>
+  </data>
+  <data name="ErrorWhenAuthorizingTheDevice" xml:space="preserve">
+    <value>Qurilmani avtorizatsiya qilishda xato</value>
+  </data>
+  <data name="FailedLogin" xml:space="preserve">
+    <value>Muvaffaqiyatsiz kirish urinishi, keyinroq harakat qilib ko'ring</value>
+  </data>
+  <data name="Kz" xml:space="preserve">
+    <value>Kazakh</value>
+  </data>
+  <data name="MistakeIsImpossibleToClose" xml:space="preserve">
+    <value>Xato! Kassa smenasini yopish mumkin emas</value>
+  </data>
+  <data name="MistakeTheBalance" xml:space="preserve">
+    <value>Xato! naqd pul qoldig'i ko'rsatilmagan</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>topilmadi</value>
+  </data>
+  <data name="Printed" xml:space="preserve">
+    <value>Bosilgan</value>
+  </data>
+  <data name="ResultsOfOperations" xml:space="preserve">
+    <value>Operatsiyalar natijalari</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sotish</value>
+  </data>
+  <data name="SentForPrintingToThePrinter" xml:space="preserve">
+    <value>Printerda chop etish uchun yuborilgan</value>
+  </data>
+  <data name="ShiftReport" xml:space="preserve">
+    <value>O'zgarish haqida hisobot</value>
+  </data>
+  <data name="TheBeginningShift" xml:space="preserve">
+    <value>Smenaning boshlanishi</value>
+  </data>
+  <data name="TheEstimatedAmountInTheCashRegisterDoesNotMatch" xml:space="preserve">
+    <value>Kassadagi taxminiy miqdor mos kelmaydi</value>
+  </data>
+  <data name="TheOrderIsOpen" xml:space="preserve">
+    <value>Buyurtma Ochiq</value>
+  </data>
+  <data name="TheOrderWasReturned" xml:space="preserve">
+    <value>Buyurtmani qaytarib berdi</value>
+  </data>
+  <data name="TheReportWasDevice" xml:space="preserve">
+    <value>Hisobot qurilmadan tuzilgan</value>
+  </data>
+  <data name="TotalAmountToBePaid" xml:space="preserve">
+    <value>To'lov uchun jami</value>
+  </data>
+  <data name="TotalDocuments" xml:space="preserve">
+    <value>Barcha hujjatlar</value>
+  </data>
+  <data name="TypesOfPayment" xml:space="preserve">
+    <value>To'lov turlari</value>
+  </data>
+  <data name="YouDontWorkTerminal" xml:space="preserve">
+    <value>Siz terminal orqasida ishlashga kirish imkoniga ega emassiz</value>
+  </data>
+  <data name="entrance" xml:space="preserve">
+    <value>kirish, qavat, kvartira va boshqalar.</value>
+  </data>
+  <data name="OrderIsPaid" xml:space="preserve">
+    <value>Buyurtma to'lanadi</value>
+  </data>
+</root>

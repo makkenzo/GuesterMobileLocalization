@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:Mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Widgets.BusyMopup"
+             xmlns:res="clr-namespace:Guester.Resources"
+             Background="{StaticResource TransperentDark}"
+             CloseWhenBackgroundIsClicked="True">
+    <Border Padding="10" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" >
+        <ActivityIndicator IsRunning="True" Scale="2"
+                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+    </Border>
+</Mopups:PopupPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mopups:PopupPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:models="clr-namespace:Guester.Models"
+                xmlns:Mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+                x:Class="Guester.Widgets.CashRegisterView"
+                xmlns:fa="clr-namespace:FontAwesome"
+                xmlns:vm="clr-namespace:Guester.ViewModels"
+                xmlns:res ="clr-namespace:Guester.Resources"
+                Background="{StaticResource TransperentDark}"
+                BackgroundInputTransparent="False"
+                CloseWhenBackgroundIsClicked="False">
+    <Mopups:PopupPage.BindingContext>
+        <vm:CashRegistorViewModel/>
+    </Mopups:PopupPage.BindingContext>
+
+    <Grid  VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource TransperentDark}" >
+
+        <Border VerticalOptions="Center" MinimumWidthRequest="500" HorizontalOptions="Center" Padding=" 20">
+            <StackLayout Spacing="15" >
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Label Text="{x:Static fa:FontAwesomeIcons.Xmark}" FontFamily="FAS"  FontSize="34"  FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Start"  IsVisible="{Binding CanClose,Mode=OneWay}" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ConfirmCashCommand}" CommandParameter="close"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="{Binding Title,Mode=OneWay}" VerticalOptions="Start" FontSize="Title"  />
+                    <Label Text="{x:Static fa:FontAwesomeIcons.MoneyBill}" FontFamily="FAS" TextColor="{StaticResource Primary}" FontAttributes="Bold" FontSize="Title" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <Border Padding="15" BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark},Light={StaticResource BackgroundColorLight}}" >
+                    <Entry Text="{Binding SummMoney,Mode=TwoWay}" Placeholder="{x:Static res:AppResources.EnterTheRemainingCash}" Keyboard="Numeric"  FontSize="Subtitle"  />
+                </Border>
+                <Border Padding="15" BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark},Light={StaticResource BackgroundColorLight}}" >
+                        <Entry Text="{Binding Comment,Mode=TwoWay}" Placeholder="{x:Static res:AppResources.EnterAComment}"  FontSize="Subtitle"  />
+                </Border>
+                <Button Text="{x:Static res:AppResources.Confirm}" TextTransform="None" FontAttributes="Bold" Command="{Binding ConfirmCashCommand}"   />
+    
+            </StackLayout>
+        </Border>
+
+    </Grid>
+
+</Mopups:PopupPage>

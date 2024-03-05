@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Tamplates.BellNavTemplate"
+             x:Name="this"
+             xmlns:mcu="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             >
+    
+
+    <Grid ColumnDefinitions="*,auto"  MinimumWidthRequest="10" Padding="5,0" >
+        <Border Padding="5,0" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand">
+            <Label FontAttributes="Bold" FontSize="Subtitle" HorizontalOptions="Center" VerticalOptions="Center" 
+            TextColor="{Binding TextColor, Source={x:Reference this}}" Text="{Binding Title, Source={x:Reference this}}"  FontFamily="{Binding Font, Source={x:Reference this}}"/>
+        </Border>
+        <Border BackgroundColor="Red" Grid.Column="1" Margin="5" Padding="5,2" HorizontalOptions="Start" VerticalOptions="Center" IsVisible="{Binding IsCounterVisible, Source={x:Reference this}, Mode=TwoWay}" >
+                <Label Text="{Binding Counter, Source={x:Reference this}}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small" TextColor="White" />
+        </Border>
+    </Grid>
+</ContentView>
+

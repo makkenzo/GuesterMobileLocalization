@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Views.DeviceAuthPage"
+             Title="DeviceAuthPage"
+             xmlns:fa="clr-namespace:FontAwesome"
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+             xmlns:res="clr-namespace:Guester.Resources"
+             x:DataType="vm:DeviceAuthViewModel"
+             Shell.NavBarIsVisible="False"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior
+            StatusBarColor="{AppThemeBinding Dark={StaticResource BGDark}, Light={StaticResource BGLight}}"
+            StatusBarStyle="{AppThemeBinding Dark=LightContent, Light=DarkContent}"/>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid  >
+            <Image  Source="appiconbg" Opacity="0.3" Aspect="AspectFit"  />
+
+            <StackLayout MaximumWidthRequest="450" VerticalOptions="Center" Spacing="5" Padding="20,10"   >
+                <Label Text="{x:Static res:AppResources.AuthorizationDevice}" FontAttributes="Bold" Margin="10" HorizontalOptions="Center" FontSize="16" />
+                <Border Padding="5"  >
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,5"
+                                Radius="5"
+                                Opacity="0.2"/>
+                    </Border.Shadow>
+                    <Entry Text="{Binding Login}" Placeholder="{x:Static res:AppResources.EnterLogin}" HorizontalTextAlignment="Center" VerticalOptions="Center" >
+
+                    </Entry>
+                </Border>
+                <Border Padding="5"  >
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                        Offset="0,5"
+                                        Radius="5"
+                                        Opacity="0.2"/>
+                    </Border.Shadow>
+                    <Grid>
+                        <Entry x:Name="PassEntry" Text="{Binding Password}" Placeholder="{x:Static res:AppResources.EnterPswd}" HorizontalTextAlignment="Center" VerticalOptions="Center" IsPassword="True"  />
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Eye}" Margin="15,0" FontSize="Subtitle"
+                                FontFamily="FAS" HorizontalOptions="End" VerticalOptions="Center">
+
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference PassEntry},Path=IsPassword,Mode=OneWay}"
+                                             Value="False">
+                                    <Setter Property="Text" Value="{x:Static fa:FontAwesomeIcons.EyeSlash}"/>
+
+                                </DataTrigger>
+
+                            </Label.Triggers>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SwichPassVisible"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </Grid>
+
+                </Border>
+                <Label Text="{x:Static res:AppResources.DeviceAuthLabel}" Margin="10,0" Opacity="0.5" FontAttributes="Bold" FontSize="12" />
+
+                <Button Text="{x:Static res:AppResources.ConfirmLabel}" Margin="15" FontAttributes="Bold" HorizontalOptions="Center"   Padding="40,10"  Command="{Binding AuthorizeCommand}"/>
+
+
+            
+                
+            </StackLayout>
+            <Label Text="{Binding AppVersion,Mode=OneTime}"  Margin="15"  FontAttributes="Bold" FontSize="12" HorizontalOptions="EndAndExpand" VerticalOptions="End"></Label>
+          
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

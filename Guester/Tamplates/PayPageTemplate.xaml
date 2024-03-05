@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Tamplates.PayPageTemplate"        
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+         xmlns:fa="clr-namespace:FontAwesome"
+         xmlns:res="clr-namespace:Guester.Resources"
+         Shell.NavBarIsVisible="False"
+         xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:Guester.Models"
+             x:DataType="vm:PayPageViewModel"  
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:l="clr-namespace:CustomLayouts">
+
+
+
+    <ContentView.Resources>
+
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedConverter" />
+        </ResourceDictionary>
+        <DataTemplate x:DataType="models:PaymentMethod" x:Key="PaymentMethodTemplate">
+            <VerticalStackLayout >
+                <Border Padding="10"  >
+                    <Border.Triggers>
+                        <DataTrigger TargetType="Border" Binding="{Binding IsActive, Mode=TwoWay}" Value="True">
+                            <Setter Property="StrokeThickness" Value="4" />
+                            <Setter Property="Stroke" Value="{StaticResource Primary}" />
+                        </DataTrigger>
+                    </Border.Triggers>
+                    <StackLayout  Spacing="10"  Orientation="Horizontal"  >
+                        <Label  FontAttributes="Bold" VerticalTextAlignment="Center" Text="{x:Static fa:FontAwesomeIcons.MoneyBill}" FontFamily="FAS" FontSize="Subtitle"  />
+                        <Label FontAttributes="None" VerticalTextAlignment="Center" Text="{Binding Name,Mode=OneTime}" FontSize="Subtitle"  />
+
+
+                        <Label   HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontAttributes="None"  Text="{Binding PaymentSum,Mode=TwoWay,StringFormat='{0:N2} '}"      FontSize="Subtitle"  >
+                            
+                        </Label>
+                    </StackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PayPageViewModel}},Path=ChangesPayMethodCommand }" CommandParameter="{Binding .}"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <BoxView HeightRequest="1" Opacity="0.5" />
+
+            </VerticalStackLayout>
+
+        </DataTemplate>
+
+    </ContentView.Resources>
+
+
+    <ContentView.Content>
+        <Grid RowDefinitions="55,*" BackgroundColor="{AppThemeBinding Dark={StaticResource HeaderBarBackgroundColorDark},Light={StaticResource HeaderBarBackgroundColorLight}}" Padding="0" RowSpacing="-1" >
+
+            <Grid ColumnDefinitions="150,*,450"  BackgroundColor="{StaticResource NawBarBackgroundColor}" Padding="20,5">
+
+
+                <Label  VerticalOptions="Center" TextColor="White"  >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontFamily="FAS" FontSize="Subtitle" Text="{x:Static fa:FontAwesomeIcons.ChevronLeft}"/>
+                            <Span  Text="  "/>
+                            <Span FontAttributes="Bold" FontSize="Subtitle"  Text="{x:Static res:AppResources.Cancel}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+
+
+                <Label Grid.ColumnSpan="3" Margin="20,0"  VerticalOptions="Start"  FontAttributes="Bold"  HorizontalOptions="Center" TextColor="White" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static res:AppResources.ReceiptNumber}" FontSize="Subtitle" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Order.Number, Mode=OneWay}" FontSize="Subtitle"  />
+                            <Span Text="   " />
+                            <Span FontAttributes="Bold" FontSize="Subtitle" FontFamily="FAS"  TextColor="White" Text="{x:Static fa:FontAwesomeIcons.ChevronDown}" />
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.ColumnSpan="3" Margin="20,0"  VerticalOptions="End"  FontAttributes="Bold"  HorizontalOptions="Center" TextColor="White" Text="{Binding Order.Name,Mode=OneWay}" />
+
+
+
+
+                <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End" Padding="0,10" >
+
+                    <Border  Padding="0" BackgroundColor="Transparent">
+                        <Label  Text="{x:Static fa:FontAwesomeIcons.Bell}" FontFamily="FAS" FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                 TextColor="{StaticResource UnSelektTabTextColor}" />
+                    </Border>
+                    <BoxView WidthRequest="1"  Margin="10,0" Opacity="0.5" BackgroundColor="{StaticResource UnSelektTabTextColor}"   />
+                    <Border  Padding="0" BackgroundColor="Transparent">
+                        <Label  Text="{x:Static fa:FontAwesomeIcons.Bars}" FontFamily="FAS" FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                TextColor="{StaticResource UnSelektTabTextColor}" />
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Homepage.FunctionalMenuOpenCommand}" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <BoxView WidthRequest="1"  Margin="10,0" Opacity="0.5" BackgroundColor="{StaticResource UnSelektTabTextColor}"   />
+                    <Border  Padding="0" BackgroundColor="Transparent">
+                        <Label Text="{Binding Homepage.CurrentLang, Mode=OneWay}"  FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource UnSelektTabTextColor}" />
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer   Command="{Binding Homepage.LanguageChangeCommand}" CommandParameter="Border"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <BoxView WidthRequest="1"  Margin="10,0" Opacity="0.5" BackgroundColor="{StaticResource UnSelektTabTextColor}"   />
+                    <Border  Padding="0" BackgroundColor="Transparent">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding Homepage.CurrentUser.FullName ,Mode=OneWay}" MaximumWidthRequest="234" LineBreakMode="TailTruncation"  FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource UnSelektTabTextColor}" />
+                            <Label Text="{x:Static fa:FontAwesomeIcons.ArrowRightFromBracket}" FontFamily="FAS" FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource UnSelektTabTextColor}" />
+                        </HorizontalStackLayout>
+                        <Border.GestureRecognizers>
+                            <!--<TapGestureRecognizer Command="{Binding ChangeUserCommand}" />-->
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                    <Border  Padding="0" BackgroundColor="Transparent" Margin="25,0,0,0">
+                        <Label  Text="{x:Static fa:FontAwesomeIcons.Globe}" FontFamily="FAS" FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource GreenButton}" >
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding Homepage.IsInternet,Mode=OneWay}" Value="False">
+                                    <Setter Property="TextColor" Value="{StaticResource RedButton}" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Border>
+                </HorizontalStackLayout>
+
+            </Grid>
+
+
+            <Grid Grid.Row="1" ColumnDefinitions=".7*,*" >
+
+                <Grid  RowDefinitions="*,*,*,*,*"   ColumnDefinitions="*,*,*" Opacity="0.7" RowSpacing="20" Padding="20,50,30,60" ColumnSpacing="20" >
+
+                    <Grid Grid.ColumnSpan="3" ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <Border   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                            <Label Text="{x:Static res:AppResources.TenThousand}" FontSize="Title" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" InputTransparent="True"/>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="10000" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Border  Grid.Column="1"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                            <Label Text="{x:Static res:AppResources.TwentyThousand}" FontSize="Title" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="20000" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </Grid>
+
+                    <Border Grid.Row="1"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Seven}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS"  VerticalOptions="Center" HorizontalOptions="Center" InputTransparent="True"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="7" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border Grid.Row="1"  Grid.Column="1"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Eight}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS"  VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="8" />
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Border Grid.Row="1"  Grid.Column="2"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="9" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Nine}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+
+                    <Border  Grid.Row="2" Grid.Column="2"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="6" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Six}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+                    <Border  Grid.Column="1" Grid.Row="2"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="5" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Five}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+                    <Border   Grid.Row="2"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="4" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Four}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+
+                    <Border  Grid.Row="3"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="1" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.One}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+                    <Border  Grid.Column="1" Grid.Row="3"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="2"   />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Two}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+                    <Border  Grid.Column="2" Grid.Row="3"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="3" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Three}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+
+                    <Border  Grid.Column="1" Grid.Row="4"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="0" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.Zero}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Grid.Row="4"   StrokeThickness="4" Stroke="{AppThemeBinding Dark={StaticResource TextColorDark},Light={StaticResource TextColorLight}}"   >
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KeyInputCommand}" CommandParameter="back" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{x:Static fa:FontAwesomeIcons.DeleteLeft}" FontSize="Title" FontAttributes="Bold" FontFamily="FAS" VerticalOptions="Center" HorizontalOptions="Center"  InputTransparent="True"/>
+                    </Border>
+
+
+                </Grid>
+
+                <Grid Grid.Column="1" RowDefinitions="80,*,90,45"   Padding="20"  >
+                    <Label   FontSize="Title"  >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.TotalToPay}"  FontAttributes="Bold"/>
+                                <Span Text=" "/>
+                                <Span Text="{Binding Order.OrderReceipt.ResultSum, Mode=OneWay,StringFormat='{0:N2} '}" FontAttributes="Bold"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+
+                    </Label>
+                    <Label   Margin="0,40,0,0" FontSize="Subtitle"  >
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding SumChange, Mode=OneWay,StringFormat='{0:N2} '}" Value="0.00 " >
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.Change}"  FontAttributes="None"/>
+                                <Span Text=" "/>
+                                <Span Text="{Binding SumChange, Mode=OneWay,StringFormat='{0:N2} '}" FontAttributes="None"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    
+                    
+                    
+                    <syncfusion:SfListView  ItemsSource="{Binding PaymentMethods, Mode=OneWay}" SelectionMode="Single"  SelectedItem="{Binding SelectedPayment,Mode=TwoWay}" Grid.Row="1" CachingStrategy="RecycleTemplate" ItemsSourceChangeCachingStrategy="RecycleItems">
+
+                        <syncfusion:SfListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:PaymentMethod">
+                                <VerticalStackLayout  >
+
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroupList>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Selected">
+                                                    <VisualState.Setters>
+                                                     
+                                                            <Setter TargetName="Indicator" Property="Border.Stroke" Value="{StaticResource Primary}"/>
+                                                            <Setter TargetName="Indicator" Property="Border.StrokeThickness" Value="4"/>
+                                                            <Setter TargetName="Indicator" Property="Border.BackgroundColor" Value="Transparent"/>
+                                                        
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+
+                                                        <Setter TargetName="Indicator" Property="Border.Stroke" Value="Transparent"/>
+                                                        <Setter TargetName="Indicator" Property="Border.StrokeThickness" Value="0"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateGroupList>
+                                    </VisualStateManager.VisualStateGroups>
+                                    
+
+                                    <Border Padding="10" x:Name="Indicator"   >
+
+                                        <StackLayout  Spacing="10"  Orientation="Horizontal"  >
+                                            <Label  FontAttributes="Bold" VerticalTextAlignment="Center" Text="{Binding Icon, Mode=OneTime}" FontFamily="FAS" FontSize="Subtitle"  />
+                                            <Label FontAttributes="None" VerticalTextAlignment="Center" Text="{Binding  Name, Mode=OneTime}" FontSize="Subtitle"  />
+                                            <Label   HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontAttributes="None"  Text="{Binding  PaymentSum, Mode=TwoWay,StringFormat='{0:N2} '}"
+                                                     FontSize="Subtitle"  />
+
+                                        </StackLayout>
+
+                                    </Border>
+
+                                    <BoxView HeightRequest="1" Opacity="0.5" Margin="0,3"/>
+
+                                </VerticalStackLayout>
+                                
+                                
+                            </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+
+
+
+
+                        <syncfusion:SfListView.SelectedItemTemplate>
+                            <DataTemplate x:DataType="models:PaymentMethod">
+
+
+                                <VerticalStackLayout  >
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroupList>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Selected">
+                                                    <VisualState.Setters>
+                                                        <Setter
+                                                            TargetName="Indicator"
+                                                            Property="BoxView.Color"
+                                                            Value="{StaticResource Primary}"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+
+                                                        <Setter
+                                                            TargetName="Indicator"
+                                                            Property="BoxView.Color"
+                                                            Value="Transparent"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateGroupList>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Border Padding="10" x:Name="Indicator"  StrokeShape="RoundRectangle"   Stroke="{StaticResource Primary}" StrokeThickness="3" >
+
+                                        <StackLayout  Spacing="10"  Orientation="Horizontal"  >
+                                            <Label  FontAttributes="Bold" VerticalTextAlignment="Center" Text="{Binding Icon, Mode=OneTime}" FontFamily="FAS" FontSize="Subtitle"  />
+                                            <Label FontAttributes="None" VerticalTextAlignment="Center" Text="{Binding  Name, Mode=OneTime}" FontSize="Subtitle"  />
+                                            <Label   HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontAttributes="None"  Text="{Binding  PaymentSum, Mode=TwoWay,StringFormat='{0:N2} '}"
+                          FontSize="Subtitle"  />
+
+                                        </StackLayout>
+
+                                    </Border>
+
+                                    <BoxView HeightRequest="1" Opacity="0.5" Margin="0,3" />
+
+                                </VerticalStackLayout>
+
+
+
+                 
+                            </DataTemplate>
+                        </syncfusion:SfListView.SelectedItemTemplate>
+
+
+                    </syncfusion:SfListView   >
+
+                 
+
+                    <!--<VerticalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center"  IsVisible="{Binding IsPaymentVisible, Converter={StaticResource InvertedConverter},Mode=OneWay}">
+                        <ActivityIndicator IsRunning="True" HeightRequest="200" WidthRequest="200"/>
+                    </VerticalStackLayout>-->
+                    <VerticalStackLayout Grid.Row="2">
+                        <Border   >
+                            <StackLayout Orientation="Horizontal"  >
+                                <Label FontAttributes="None" VerticalTextAlignment="Center" Text="{x:Static res:AppResources.PrintReceipt}" FontSize="Subtitle"  />
+
+
+                                <CheckBox HorizontalOptions="EndAndExpand"  IsChecked="{Binding IsCheckPrint,Mode=TwoWay}"  />
+                            </StackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PrintCheckEnableCommand}" CommandParameter="IsCheckPrint"/>
+                            </Border.GestureRecognizers>
+
+                        </Border> 
+                        <Border   >
+                            <StackLayout Orientation="Horizontal"  >
+                                <Label FontAttributes="None" VerticalTextAlignment="Center" Text="Отключить печать фиксального чека" FontSize="Subtitle"  />
+
+
+                                <CheckBox HorizontalOptions="EndAndExpand"  IsChecked="{Binding IsFiscalPrint,Mode=TwoWay}"  />
+                            </StackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PrintCheckEnableCommand}" CommandParameter="IsFiscalPrint"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </VerticalStackLayout>
+                
+
+                    <StackLayout Grid.Row="3"   VerticalOptions="EndAndExpand"   Orientation="Horizontal" >
+                        <Label  FontAttributes="None" TextColor="Red" VerticalTextAlignment="Center" Text="{x:Static res:AppResources.CloseWithoutPayment}" FontSize="16"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding WithoutPayCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+
+                        <Button  HorizontalOptions="EndAndExpand" Text="{x:Static res:AppResources.Pay}" Command="{Binding PaidCommand}" BackgroundColor="{StaticResource GreenButton}" TextTransform="None" FontAttributes="Bold" FontSize="Subtitle" Padding="40,10"   />
+                    </StackLayout>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Tamplates.OrdersContent"
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+             xmlns:fa="clr-namespace:FontAwesome"
+             xmlns:snf="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:data="clr-namespace:Syncfusion.Maui.DataSource;assembly=Syncfusion.Maui.DataSource"   
+             xmlns:syncExp="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:res="clr-namespace:Guester.Resources"
+             xmlns:models="clr-namespace:Guester.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"           
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:DataType="vm:OrdersContentViewModel">
+
+    <ContentView.Resources>
+        
+            <toolkit:InvertedBoolConverter x:Key="InvertBool" />
+        
+        
+        
+            <DataTemplate x:Key="OrderTemplate" >
+                <Grid  Padding="10" x:DataType="models:Orders"
+                 BackgroundColor="{AppThemeBinding Dark={StaticResource HeaderBarBackgroundColorDark},Light={StaticResource HeaderBarBackgroundColorLight}}" 
+                 ColumnSpacing="8" ColumnDefinitions="95,*,135,250,180">
+
+                 <Label Text="{Binding CreationDate.LocalDateTime,Mode=OneWay,StringFormat='{0:HH:mm}'}" FontAttributes="Bold" FontSize="18"  HorizontalOptions="Center" VerticalOptions="Center" />
+
+                    <!--<Label Grid.Column="1" Text="{Binding ModifiedDate.LocalDateTime,Mode=OneWay,StringFormat='{0:HH:mm}'}" FontAttributes="Bold" FontSize="18"  HorizontalOptions="Start" VerticalOptions="Center" />-->
+
+                <Label VerticalOptions="Center"   FontSize="Title" Grid.Column="1" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding OrderTypeGlyph,Mode=OneWay}" FontFamily="FAS" FontSize="Title" TextColor="#646464" />
+                            <Span Text="   "  />
+                            <Span Text="№" TextColor="#7965AF" />
+                            <Span Text="{Binding Number,Mode=OneWay}" TextColor="#7965AF" FontAttributes="Bold" />
+                            <Span Text="   "  />
+                            <Span Text="{x:Static fa:FontAwesomeIcons.CaretRight}" FontFamily="FAS" FontSize="18" FontAttributes="Bold" />
+                            <Span Text="   "  />
+                            <Span Text="{Binding OrderTypeToString,Mode=OneWay}" FontSize="18" FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Grid.Column="2"  Text="{Binding OrderStatusToString,Mode=OneWay}"  FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" HorizontalOptions="Center" />
+
+
+                <!--кнопкa для изменения статусов заказа-->
+                <StackLayout Orientation="Horizontal"  Grid.Column="3"  >
+                    <Picker IsVisible="{Binding PickerVisible,Mode=OneWay}" VerticalOptions="Center" MaximumWidthRequest="100"
+                                Title="{x:Static res:AppResources.Courer}"  FontSize="{OnPlatform iOS=Subtitle,Android=Subtitle,WinUI=14}"   
+                                SelectedIndexChanged="Picker_SelectedIndexChanged"
+                                ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}},Path=Couriers }"  
+                                ItemDisplayBinding="{Binding FullName , Mode=OneWay}" Margin="0,0,5,0">
+
+                    </Picker>
+                    <Button MinimumWidthRequest="100"  Text="{Binding OrderStatusText, Mode=OneWay}" TextTransform="None"  FontAttributes="Bold" FontSize="Subtitle" BackgroundColor="#479649"  
+             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}},Path=GoToPayPageCommand }" CommandParameter="{Binding .}"
+             IsVisible="{Binding Detail.OrderTypePayVisible}" HorizontalOptions="FillAndExpand"  >
+
+                        <!--<Button.Triggers>
+             <DataTrigger TargetType="Button" Binding="{Binding Detail.OrderTypeRaw}" Value="0">
+                 <Setter Property="Command" Value="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}},Path=ChangeOrderStatusCommand }" />
+             </DataTrigger>
+         </Button.Triggers>-->
+                    </Button>
+                    <Button MinimumWidthRequest="100"  Text="{Binding OrderStatusText, Mode=OneWay}" TextTransform="None"  FontAttributes="Bold" FontSize="Subtitle" BackgroundColor="#479649"  
+              Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}},Path=ChangeOrderStatusCommand }" CommandParameter="{Binding .}"
+              IsVisible="{Binding Detail.OrderTypeChangeStateVisible,Mode=OneWay}" HorizontalOptions="FillAndExpand" >
+
+                    </Button>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <!--кнопкa для изменения статусов заказа-->
+
+                <Label Grid.Column="4" HorizontalOptions="End"  VerticalOptions="Center" FontAttributes="Bold" FontSize="Subtitle" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding OrderReceipt.ResultSum,Mode=OneWay}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}}, Path=HomePageViewModel.Currency,Mode=OneWay}" />
+                            <Span Text=" " />
+                            <Span Text="{x:Static fa:FontAwesomeIcons.ChevronRight}" FontFamily="FAS" FontAttributes="Bold" FontSize="Subtitle" TextColor="#7965AF" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Grid.GestureRecognizers>
+
+                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel}},Path=GotoDetailCommand }" CommandParameter="{Binding .}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+
+            </DataTemplate>
+
+        <DataTemplate x:DataType="models:Table" x:Key="TableTemplate">
+            <StackLayout Spacing="5">
+              
+                <Border BackgroundColor="Transparent">
+                    <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Name,Mode=OneWay}"  FontSize="Small" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel} },Path=SeletTableCommand}" CommandParameter="{Binding .}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel} },Path=SeletTableCommand}" CommandParameter="{Binding .}" />
+                    </Border.GestureRecognizers>
+                </Border>
+                <BoxView HeightRequest="1"  Opacity="0.5"  IsVisible="{Binding Name,Mode=OneWay}" />
+            </StackLayout>
+        </DataTemplate>
+
+
+        <DataTemplate x:Key="typeTemplate">
+            <StackLayout>
+                <Border  HeightRequest="30"   x:DataType="models:Detail"  BackgroundColor="Transparent" >
+
+                    <Label HorizontalOptions="Start" VerticalOptions="Center" >
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static fa:FontAwesomeIcons.Utensils}" FontFamily="FAS" TextColor="{StaticResource Primary}"/>
+                                <Span Text="     "/>
+                                <Span Text="{Binding Name,Mode=OneWay}"  FontSize="Small"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel} },Path=CreateOrderCommand }" CommandParameter="{Binding .}"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <BoxView HeightRequest="1"  Opacity="0.5"  />
+
+            </StackLayout>
+
+        </DataTemplate>
+
+
+
+
+
+        <DataTemplate x:Key="GuestTemplate" x:DataType="models:GuestCreate">
+            <StackLayout>
+                <Border BackgroundColor="Transparent" HeightRequest="30">
+                    <Label   HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Name,Mode=OneWay}"  FontSize="Small"  >
+                
+                    </Label>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:OrdersContentViewModel} },Path=SeletGuestCountCommand }" CommandParameter="{Binding Name,Mode=OneWay}" />
+                    </Border.GestureRecognizers>
+                </Border>
+                <BoxView HeightRequest="1"  Opacity="0.5"  />
+            </StackLayout>
+        </DataTemplate>
+
+    </ContentView.Resources>
+
+
+
+
+    <ContentView.Content>
+    <Grid RowDefinitions="55,25,*">
+        
+        
+        
+        <StackLayout Orientation="Horizontal" Spacing="15" Padding="20,0" BackgroundColor="{StaticResource DarkNawBarBackgroundColor}"  >
+            <Button Text="{x:Static res:AppResources.NewOrder}" WidthRequest="150" FontAttributes="Bold" Padding="20,0" Margin="0,5" TextTransform="None" BackgroundColor="{StaticResource GreenButton}" Command="{Binding CreateOrderCommand}" CommandParameter="{Null}" />
+            <!--<Button Margin="0,10" WidthRequest="145" BackgroundColor="{StaticResource GreenButton}" Text="Новый заказ"  FontSize="18" Padding="0" FontAttributes="Bold"/>-->
+
+                <Grid ColumnDefinitions="*,*,*,*,*,*" RowDefinitions="10,30,10" RowSpacing="0" ColumnSpacing="40" Margin="20,0">
+
+                    <Label  Grid.Row="1"  FontAttributes="Bold" FontSize="16" HorizontalOptions="Center"  TextColor="White"  Opacity="0.7"    HorizontalTextAlignment="Center" >
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsAllOrders,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.All}" />
+                                <Span Text="  " />
+                                <Span Text="{Binding AllCount, Mode=OneWay}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="all" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="2" HeightRequest="5" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsAllOrders,Mode=OneWay}"/>
+
+                    
+                    
+                    <Label Grid.Row="1" Grid.Column="1"   FontAttributes="Bold" FontSize="16"  HorizontalOptions="Center" TextColor="White"   Opacity="0.7" >
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsNewOrders,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.New}" />
+                                <Span Text="   " />
+                                <Span Text="{Binding NewCount,Mode=OneWay}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="new" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView  Grid.Row="2" Grid.Column="1"  HeightRequest="6" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsNewOrders,Mode=OneWay}" />
+
+
+
+                    <Label  Grid.Row="1" Grid.Column="2"  FontAttributes="Bold" FontSize="16"  HorizontalOptions="Center" TextColor="White"  Opacity="0.7" >
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsOnlineOrders,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.Online}" />
+                                <Span Text="   " />
+                                <Span Text="{Binding OnlineCount, Mode=OneWay}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="online" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView  Grid.Row="2" Grid.Column="2"  HeightRequest="6" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsOnlineOrders,Mode=OneWay}" />
+
+
+
+                    <Label  Grid.Row="1" Grid.Column="3" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center"  TextColor="White"  Opacity="0.7" >
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsSuccessOrders,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.Succes}" />
+                                <Span Text="   " />
+                                <Span Text="{Binding AlreadyCount, Mode=OneWay}"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="succes" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="2" Grid.Column="3" HeightRequest="6" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsSuccessOrders,Mode=OneWay}"/>
+
+
+                    <Label Grid.Row="1" Grid.Column="4"   FontAttributes="Bold" FontSize="16" HorizontalOptions="Center"   TextColor="White"  Opacity="0.7" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.InWay}" />
+                                <Span Text="   " />
+                                <Span Text="{Binding InWayCount,Mode=OneWay}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsInWayOrders,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="inway" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView  Grid.Row="2" Grid.Column="4" HeightRequest="6" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsInWayOrders,Mode=OneWay}" />
+
+                    <Label    Grid.Row="1" Grid.Column="5" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" TextColor="White"   Opacity="0.7" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static res:AppResources.Delivery}" />
+                                <Span Text="   " />
+                                <Span Text="{Binding DeliveryCount, Mode=OneWay}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsDelivered,Mode=OneWay}" Value="true">
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Label.Triggers>
+
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterChangesCommand}" CommandParameter="delivered" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    <BoxView  Grid.Row="2" Grid.Column="5" HeightRequest="6" BackgroundColor="{StaticResource GreenButton}" IsVisible="{Binding IsDelivered,Mode=OneWay}" />
+
+                
+                </Grid>
+
+                <Grid HorizontalOptions="FillAndExpand"/>
+
+
+           
+
+            <Border  VerticalOptions="Center" BackgroundColor="Transparent"  Padding="0,8">
+
+
+                <Label   FontAttributes="Bold" FontSize="16" HorizontalOptions="End" VerticalOptions="CenterAndExpand" TextColor="White" >
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding OrdersType,Mode=OneWay}" />
+                            <Span Text="   " />
+                            <Span Text="{x:Static fa:FontAwesomeIcons.EllipsisVertical}" FontFamily="FAS" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="Border"/>
+                </Border.GestureRecognizers>
+            </Border>
+       
+        
+        
+        
+        
+        </StackLayout>
+       
+        
+        
+        
+        <Grid ColumnDefinitions="95,*,135,250,165,15" ColumnSpacing="10"   Grid.Row="1" Padding="10,0"
+               BackgroundColor="{StaticResource NawBarBackgroundColor}">
+            <Label Opacity="0.7" TextColor="White" Text="{x:Static res:AppResources.Open}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <!--<Label Opacity="0.7" TextColor="White" Grid.Column="1" Text="{x:Static res:AppResources.DeliveryTime}" LineBreakMode="TailTruncation" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+            <Label Opacity="0.7" TextColor="White" Grid.Column="1" Text="{x:Static res:AppResources.Order}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Start"  Margin="50,0" VerticalOptions="Center" />
+            <Label Opacity="0.7" TextColor="White" Grid.Column="2"  Text="{x:Static res:AppResources.Status}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Opacity="0.7" TextColor="White" Grid.Column="4"  Text="{x:Static res:AppResources.Amount}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="End" VerticalOptions="Center" />
+        </Grid>
+
+
+    
+
+        <syncfusion:SfListView Grid.Row="2" x:Name="listView" ItemsSource="{Binding Orderss, Mode=OneWay}" AllowGroupExpandCollapse="True"  ItemTemplate="{StaticResource OrderTemplate}"
+                                AutoFitMode="None" ItemSpacing="2" ItemSize="{OnPlatform iOS=70,Android=70,WinUI=85}" ItemsSourceChangeCachingStrategy="RecycleItems"  CachingStrategy="RecycleTemplate"  IsStickyHeader="True" >
+            <syncfusion:SfListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout  MinimumHeightRequest="20" x:DataType="{x:Null}" Spacing="15"  >
+                        <Label Text="{x:Static fa:FontAwesomeIcons.AngleUp}" FontFamily="FAS"  VerticalOptions="Center" Margin="20,0">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding  IsExpand}" Value="true">
+                                    <Setter Property="Text" Value="{x:Static fa:FontAwesomeIcons.AngleDown}"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                        <Label  VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}"
+                                FontSize="{OnPlatform iOS=Subtitle, Android=Medium}" Text="{Binding Key}"/>
+                        <Border BackgroundColor="{StaticResource Primary}" VerticalOptions="Center">
+                            <Label Text="{Binding Count}" TextColor="White" Margin="8,2" 
+                               FontSize="{OnPlatform iOS=Subtitle, Android=Medium}" FontAttributes="Bold" />
+                        </Border>
+                        
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </syncfusion:SfListView.GroupHeaderTemplate>
+            <syncfusion:SfListView.DataSource>
+                <data:DataSource>
+                    <data:DataSource.SortDescriptors>
+                        <data:SortDescriptor PropertyName="Number" Direction="Descending"/>
+                    </data:DataSource.SortDescriptors>
+                    <data:DataSource.GroupDescriptors>
+                        <data:GroupDescriptor PropertyName="DisplayName"/>
+                    </data:DataSource.GroupDescriptors>
+                </data:DataSource>
+            </syncfusion:SfListView.DataSource>
+        </syncfusion:SfListView>
+
+
+
+
+            <!---->
+            <Grid Grid.RowSpan="3" RowDefinitions="55,25,*" BackgroundColor="{StaticResource TransperentDark}" IsVisible="{Binding IsOrderType,Mode=OneWay}" >
+            <Border Margin="65,5"  Grid.Row="1" Grid.RowSpan="2"  BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark},Light={StaticResource BackgroundColorLight}}" Padding="10"  VerticalOptions="Start" HorizontalOptions="End"   >
+
+                <StackLayout MinimumWidthRequest="170" Spacing="5" MaximumWidthRequest="200" >
+
+
+                    <Border  HeightRequest="30"  Padding="20,0" BackgroundColor="Transparent"  >
+                        <Label Text="{x:Static res:AppResources.AllOrders}" FontAttributes="Bold"  HorizontalOptions="Start" VerticalOptions="Center"   >
+                        </Label>
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="all"/>
+                        </Border.GestureRecognizers>
+
+                    </Border>
+                    <BoxView HeightRequest="1"  Opacity="0.5"  />
+
+                    <Border  HeightRequest="30"  Padding="20,0"  BackgroundColor="Transparent" >
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" >
+
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static fa:FontAwesomeIcons.Utensils}" FontFamily="FAS" TextColor="{StaticResource Primary}"/>
+                                        <Span Text="     "/>
+                                        <Span Text="{x:Static res:AppResources.InEnvy}"  FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="Restoran"/>
+                        </Border.GestureRecognizers>
+
+                    </Border>
+
+                    <BoxView HeightRequest="1"  Opacity="0.5"  />
+
+                    <Border  HeightRequest="30"  Padding="20,0"  BackgroundColor="Transparent"  >
+               
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" >
+
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static fa:FontAwesomeIcons.BagShopping}" FontFamily="FAS" TextColor="{StaticResource Primary}"/>
+                                        <Span Text="     "/>
+                                        <Span Text="{x:Static res:AppResources.Takeout}"  FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="OutRestoran"/>
+                        </Border.GestureRecognizers>
+
+                    </Border>
+
+                    <BoxView HeightRequest="1"  Opacity="0.5"  />
+
+                        <Border  HeightRequest="30"  Padding="20,0" BackgroundColor="Transparent"  >
+                        
+
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" >
+
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static fa:FontAwesomeIcons.TruckFast}" FontFamily="FAS" TextColor="{StaticResource Primary}"/>
+                                        <Span Text="     "/>
+                                        <Span Text="{x:Static res:AppResources.DeliveryLabel}"  FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="Delivered"/>
+                        </Border.GestureRecognizers>
+
+                    </Border>
+
+                </StackLayout>
+
+
+            </Border>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ChangeTypeCommand}" CommandParameter="Border"/>
+            </Grid.GestureRecognizers>
+        </Grid>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <Grid Grid.RowSpan="3" RowDefinitions="55,25,*" BackgroundColor="{StaticResource TransperentDark}" IsVisible="{Binding IsAddNewOrder,Mode=OneWay}" >
+            <Border Grid.Row="1" Grid.RowSpan="2" Margin="20,5"  BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundColorDark},Light={StaticResource BackgroundColorLight}}"  VerticalOptions="Start" HorizontalOptions="Start"
+                   IsVisible="{Binding IsAddNewOrder,Mode=OneWay}" MaximumWidthRequest="500" MaximumHeightRequest="500" Padding="10" >
+               <Grid >
+                        <Label HeightRequest="30"  Text="{x:Static res:AppResources.SelectOrderType}"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsAddNewOrder,Mode=OneWay}">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding IsTableSelect,Mode=OneWay}" Value="true" >
+
+                                    <Setter Property="IsVisible" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Label" Binding="{Binding IsGuestSelect,Mode=OneWay}" Value="true" >
+
+                                    <Setter Property="IsVisible" Value="False" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                        <Label HeightRequest="30"  Text="Выберите стол"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsTableSelect,Mode=OneWay}"/>
+                        <Label HeightRequest="30"  Text="{x:Static res:AppResources.SelectTheNumberOfGuests}"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsGuestSelect,Mode=OneWay}"/>
+                     
+                        <BoxView HeightRequest="1"  Opacity="0.5"  VerticalOptions="Start" Margin="0,20,0,220"  />
+                        <snf:SfListView ItemsSource="{Binding OrderDetails,Mode=OneWay}" ItemSize="40" ScrollBarVisibility="Never"  ItemSpacing="4" CachingStrategy="RecycleTemplate"  ItemsSourceChangeCachingStrategy="RecycleItems" ItemTemplate="{StaticResource typeTemplate}" Margin="0,30,0,0">
+                      
+                    
+
+                         <snf:SfListView.Triggers>
+                            <DataTrigger TargetType="snf:SfListView" Binding="{Binding IsTableSelect,Mode=OneWay}" Value="true" >
+                                    <Setter Property="ItemsSource" Value="{Binding Source={RelativeSource AncestorType={x:Type vm:HomePageViewModel} },Path=CurrentHall.Tables,Mode=OneWay}" />
+                                    <Setter Property="ItemTemplate" Value="{StaticResource TableTemplate}" />
+                           </DataTrigger>
+                             <DataTrigger TargetType="snf:SfListView" Binding="{Binding IsGuestSelect,Mode=OneWay}" Value="true" >
+
+                                    <Setter Property="ItemTemplate" Value="{StaticResource GuestTemplate}" />
+                                    <Setter Property="ItemsSource" Value="{Binding CreateGuests,Mode=OneWay}" />
+                      
+                           </DataTrigger>
+                       </snf:SfListView.Triggers>
+                   </snf:SfListView>
+             
+                   
+                   
+           
+             
+                  
+               </Grid>
+            
+        
+
+
+               <Border.GestureRecognizers>
+                   <TapGestureRecognizer Command="{Binding CreateOrderCommand }" CommandParameter="{Null}"/>
+               </Border.GestureRecognizers>
+
+           </Border>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CreateOrderCommand}" CommandParameter="{Null}"/>
+            </Grid.GestureRecognizers>
+        </Grid>
+
+
+
+    </Grid>
+
+
+    </ContentView.Content>
+</ContentView>
+

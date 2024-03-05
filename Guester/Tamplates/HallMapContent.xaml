@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Guester.Tamplates.HallMapContent"
+             xmlns:vm="clr-namespace:Guester.ViewModels"
+             xmlns:model="clr-namespace:Guester.Models"
+             xmlns:res="clr-namespace:Guester.Resources"
+              xmlns:fa="clr-namespace:FontAwesome"
+          >
+
+    <Grid  RowDefinitions="50,*" >
+
+        <Grid HorizontalOptions="Fill" BackgroundColor="{StaticResource DarkNawBarBackgroundColor}" />
+        <HorizontalStackLayout  VerticalOptions="Center" HorizontalOptions="Center"      >
+           
+            <Label FontAttributes="Bold" FontSize="Subtitle" Margin="5,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"  TextColor="White"   >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static res:AppResources.CurrentHall}"  />
+                        <Span Text="  "  />
+                        <Span   Text="-"  FontFamily="FAR"   FontSize="16" TextColor="White" />
+                        <Span Text="  "  />
+                        <Span Text="{Binding Source={RelativeSource AncestorType={x:Type vm:HallMapContentViewModel} },Path=Hall.Name, Mode=OneWay}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Margin="10,0,0,0" FontAttributes="Bold" FontSize="Subtitle" FontFamily="FAS" HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" Text="{x:Static fa:FontAwesomeIcons.ChevronDown}" >
+
+            </Label>
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HallMapContentViewModel} },Path=OpenHalMapPopupCommand}"  />
+               
+            </HorizontalStackLayout.GestureRecognizers>
+        
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="1" Orientation="Both" Padding="70,40" HorizontalOptions="Fill" VerticalOptions="Fill" >
+            <AbsoluteLayout Padding="70,0" HeightRequest="700" WidthRequest="940" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"    >
+                <AbsoluteLayout  x:Name="HallHolst" HeightRequest="500" WidthRequest="800" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"   BindableLayout.ItemsSource="{Binding Hall.Tables,Mode=TwoWay}" >
+
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:Table">
+                            <Border HeightRequest="{Binding Height,Mode=OneWay}" WidthRequest="{Binding Width,Mode=OneWay}"  Padding="5" TranslationX="{Binding PosX,Mode=OneWay}" TranslationY="{Binding PosY,Mode=OneWay}" BackgroundColor="{AppThemeBinding Dark={StaticResource NawBarBackgroundColor},Light={StaticResource DarkNawBarBackgroundColor}}" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="{Binding BorderRadius,Mode=OneWay}" />
+                                </Border.StrokeShape>
+                                <Label Text="{Binding Name,Mode=OneWay}" FontAttributes="Bold" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" />
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HallMapContentViewModel} },Path=TapedInTableCommand}" CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                            </Border>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+
+
+                    <AbsoluteLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding closing_popupsCommand}" />
+                    </AbsoluteLayout.GestureRecognizers>
+                    
+                </AbsoluteLayout>
+                <Border  BackgroundColor="{AppThemeBinding Dark={StaticResource HeaderBarBackgroundColorDark},Light={StaticResource HeaderBarBackgroundColorLight}}"  TranslationX="{Binding PopupPosX,Mode=OneWay}" TranslationY="{Binding PopupPosY,Mode=OneWay}"
+                        IsVisible="{Binding IsAddNewOrder,Mode=OneWay}"  >
+                    <ScrollView MaximumWidthRequest="230" MaximumHeightRequest="250"  >
+
+
+                        <StackLayout Padding="10" Spacing="5"  >
+
+                            <Label HeightRequest="30" Padding="20,0" Text="{x:Static res:AppResources.SelectTheNumberOfGuests}"  FontAttributes="Bold"  HorizontalOptions="Start" VerticalOptions="Center" />
+
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="1"  FontSize="Small"  >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="1" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="2"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="2" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  HorizontalOptions="FillAndExpand"  Grid.Column="1" VerticalOptions="Center" Text="3"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="3" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="4"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="4" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="5"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="5" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="6"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="6" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <BoxView HeightRequest="1"  Opacity="0.5"  />
+                            <Label HeightRequest="30"  Padding="20,0"  Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="7"  FontSize="Small" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SeletGuestCountCommand}" CommandParameter="7" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+
+
+                    </ScrollView>
+
+
+                    <!--<Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CreateOrderCommand }" CommandParameter="open"/>
+                    </Border.GestureRecognizers>-->
+
+                </Border>
+            </AbsoluteLayout>
+            <ScrollView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding closing_popupsCommand}" />
+            </ScrollView.GestureRecognizers>
+        </ScrollView>
+    </Grid>
+</ContentView>
