@@ -993,10 +993,7 @@
   <data name="PasswordKKM" xml:space="preserve">
     <value>KKM paroli</value>
   </data>
-  <data name="Off" xml:space="preserve">
-    <value>Oʻchirilgan</value>
-  </data>
-  <data name="SelectATable" xml:space="preserve">
-    <value>Jadvalni tanlang</value>
+  <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
+    <value>Fiskal chekni chop etishni o‘chiring</value>
   </data>
 </root>

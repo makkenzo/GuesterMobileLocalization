@@ -403,7 +403,7 @@
                         </Border> 
                         <Border   >
                             <StackLayout Orientation="Horizontal"  >
-                                <Label FontAttributes="None" VerticalTextAlignment="Center" Text="Отключить печать фиксального чека" FontSize="Subtitle"  />
+                                <Label FontAttributes="None" VerticalTextAlignment="Center" Text="{x:Static res:AppResources.DisableFiscalReceiptPrinting}" FontSize="Subtitle"  />
 
 
                                 <CheckBox HorizontalOptions="EndAndExpand"  IsChecked="{Binding IsFiscalPrint,Mode=TwoWay}"  />
