@@ -162,7 +162,13 @@ namespace Guester.Resources
             }
         }
 
-
+        internal static string SelectATable
+        {
+            get
+            {
+                return ResourceManager.GetString("SelectATable", resourceCulture);
+            }
+        }
 
 
         /// <summary>
@@ -733,6 +739,15 @@ namespace Guester.Resources
                 return ResourceManager.GetString("ClosedLabel", resourceCulture);
             }
         }
+
+        internal static string Off
+        {
+            get
+            {
+                return ResourceManager.GetString("Off", resourceCulture);
+            }
+        }
+
 
         /// <summary>
         ///   Ищет локализованную строку, похожую на Добавлен гость.

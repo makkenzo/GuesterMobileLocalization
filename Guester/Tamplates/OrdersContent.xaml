@@ -497,7 +497,7 @@
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-                        <Label HeightRequest="30"  Text="Выберите стол"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsTableSelect,Mode=OneWay}"/>
+                        <Label HeightRequest="30"  Text="{x:Static res:AppResources.SelectATable}"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsTableSelect,Mode=OneWay}"/>
                         <Label HeightRequest="30"  Text="{x:Static res:AppResources.SelectTheNumberOfGuests}"  FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Start"  IsVisible="{Binding IsGuestSelect,Mode=OneWay}"/>
                      
                         <BoxView HeightRequest="1"  Opacity="0.5"  VerticalOptions="Start" Margin="0,20,0,220"  />

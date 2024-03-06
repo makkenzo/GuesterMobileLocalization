@@ -707,7 +707,7 @@
                                             <Picker.ItemsSource>
                                                 <x:Array Type="{x:Type x:String}">
                                                     <x:String>1ч</x:String>
-                                                    <x:String>1ч 30мин</x:String>
+                                                    <x:String>1ч 30мин</x:String> 
                                                     <x:String>2ч</x:String>
                                                     <x:String>2ч 30мин</x:String>
                                                     <x:String>3ч</x:String>
