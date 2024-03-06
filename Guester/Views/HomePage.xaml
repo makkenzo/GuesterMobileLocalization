@@ -1248,9 +1248,9 @@
 
 
 
-                            
 
-                            <Button Margin="0,50,0,50"  VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="400" Text="Сохранить"  Command="{Binding SaveCashRegisterCommand}" ></Button>
+
+                            <Button Margin="0,50,0,50"  VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="400" Text="{x:Static res:AppResources.Save}"  Command="{Binding SaveCashRegisterCommand}" ></Button>
 
                             <Button Margin="0,50,0,50" IsVisible="{Binding IsNew, Mode=OneWay, Converter={StaticResource InvertedConverter}}"  VerticalOptions="EndAndExpand" BackgroundColor="Red" Opacity=".9" FontSize="16" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" WidthRequest="400" Text="Удалить"  Command="{Binding DeleteCashRegisterCommand}"  ></Button>
 
