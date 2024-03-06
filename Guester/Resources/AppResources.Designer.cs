@@ -1307,10 +1307,18 @@ namespace Guester.Resources
                 return ResourceManager.GetString("EnteringSummLessError", resourceCulture);
             }
         }
+
         internal static string Untie
         {
-            get {
+            get
+            {
                 return ResourceManager.GetString("Untie", resourceCulture);
+            }
+        }
+        internal static string DisableFiscalReceiptPrinting
+        {
+            get {
+                return ResourceManager.GetString("DisableFiscalReceiptPrinting", resourceCulture);
             }
         }
         internal static string Address

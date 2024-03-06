@@ -993,4 +993,7 @@
   <data name="PasswordKKM" xml:space="preserve">
     <value>KKM paroli</value>
   </data>
+  <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
+    <value>Fiskal chekni chop etishni o‘chiring</value>
+  </data>
 </root>
