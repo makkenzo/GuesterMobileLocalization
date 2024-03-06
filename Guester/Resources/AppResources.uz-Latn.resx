@@ -990,4 +990,7 @@
   <data name="LogOutOfApp" xml:space="preserve">
     <value>Hisobingizdan chiqing</value>
   </data>
+  <data name="PasswordKKM" xml:space="preserve">
+    <value>KKM paroli</value>
+  </data>
 </root>

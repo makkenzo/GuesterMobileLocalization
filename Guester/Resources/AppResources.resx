@@ -990,4 +990,7 @@
   <data name="LoginKKM" xml:space="preserve">
     <value>Логин ККМ</value>
   </data>
+  <data name="PasswordKKM" xml:space="preserve">
+    <value>Пароль ккм</value>
+  </data>
 </root>

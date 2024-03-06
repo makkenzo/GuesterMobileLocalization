@@ -154,6 +154,14 @@ namespace Guester.Resources
             }
         }
 
+        internal static string PasswordKKM
+        {
+            get
+            {
+                return ResourceManager.GetString("PasswordKKM", resourceCulture);
+            }
+        }
+
 
 
 
