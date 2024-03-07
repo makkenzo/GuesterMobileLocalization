@@ -1011,4 +1011,7 @@
   <data name="SelectType" xml:space="preserve">
     <value>Turini tanlang</value>
   </data>
+	<data name="Delete" xml:space="preserve">
+    <value>Oʻchirish</value>
+  </data>
 </root>
