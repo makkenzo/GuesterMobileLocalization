@@ -1011,4 +1011,7 @@
   <data name="LoginKKM" xml:space="preserve">
     <value>qqqq</value>
   </data>
+  <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
+    <value>Disable fiscal receipt printing</value>
+  </data>
 </root>
