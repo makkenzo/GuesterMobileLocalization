@@ -1011,6 +1011,9 @@
   <data name="LoginKKM" xml:space="preserve">
     <value>Login KKM</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
     <value>Disable fiscal receipt printing</value>
   </data>
