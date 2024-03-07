@@ -1009,9 +1009,15 @@
     <value>Takeaway</value>
   </data>
   <data name="LoginKKM" xml:space="preserve">
-    <value>qqqq</value>
+    <value>Login KKM</value>
   </data>
   <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
     <value>Disable fiscal receipt printing</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="PasswordKKM" xml:space="preserve">
+    <value>Password KKM</value>
   </data>
 </root>
