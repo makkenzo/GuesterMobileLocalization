@@ -170,6 +170,38 @@ namespace Guester.Resources
             }
         }
 
+        internal static string DisableFixedCheck
+        {
+            get
+            {
+                return ResourceManager.GetString("DisableFixedCheck", resourceCulture);
+            }
+        }
+
+        internal static string Printer
+        {
+            get
+            {
+                return ResourceManager.GetString("Printer", resourceCulture);
+            }
+        }
+
+        internal static string KKM
+        {
+            get
+            {
+                return ResourceManager.GetString("KKM", resourceCulture);
+            }
+        }
+
+        internal static string Scanner
+        {
+            get
+            {
+                return ResourceManager.GetString("Scanner", resourceCulture);
+            }
+        }
+
 
         /// <summary>
         ///   Ищет локализованную строку, похожую на Прибавил количество продукта.

@@ -996,10 +996,19 @@
   <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
     <value>Fiskal chekni chop etishni o‘chiring</value>
   </data>
-	<data name="Off" xml:space="preserve">
+  <data name="Off" xml:space="preserve">
     <value>Oʻchirilgan</value>
   </data>
-	<data name="SelectATable" xml:space="preserve">
+  <data name="SelectATable" xml:space="preserve">
     <value>Jadvalni tanlang</value>
+  </data>
+  <data name="abc" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Qurilma nomi</value>
+  </data>
+  <data name="SelectType" xml:space="preserve">
+    <value>Turini tanlang</value>
   </data>
 </root>
