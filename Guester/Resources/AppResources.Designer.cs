@@ -241,7 +241,6 @@ namespace Guester.Resources
             }
         }
 
-
         internal static string Delete
         {
             get
