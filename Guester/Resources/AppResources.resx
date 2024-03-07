@@ -996,4 +996,7 @@
   <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
     <value>Отключить печать фиксального чека</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
 </root>

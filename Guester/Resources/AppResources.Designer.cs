@@ -273,6 +273,15 @@ namespace Guester.Resources
             }
         }
 
+
+        internal static string Delete
+        {
+            get
+            {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Ищет локализованную строку, похожую на Все смены.
         /// </summary>
