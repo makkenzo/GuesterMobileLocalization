@@ -754,7 +754,7 @@
     <value>Model time</value>
   </data>
   <data name="TakeAway" xml:space="preserve">
-    <value>Skill</value>
+    <value>Takeaway</value>
   </data>
   <data name="WasCreateNewOrder" xml:space="preserve">
     <value>A new order was created</value>
