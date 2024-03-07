@@ -1011,16 +1011,22 @@
   <data name="LoginKKM" xml:space="preserve">
     <value>Login KKM</value>
   </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="DisableFiscalReceiptPrinting" xml:space="preserve">
-    <value>Disable fiscal receipt printing</value>
+    <value>Disable Fiscal Receipt Printing</value>
+  </data>
+  <data name="PasswordKKM" xml:space="preserve">
+    <value>Password KKM</value>
   </data>
   <data name="IPAddress" xml:space="preserve">
     <value>IP Address</value>
   </data>
-  <data name="PasswordKKM" xml:space="preserve">
-    <value>Password KKM</value>
+  <data name="KKM" xml:space="preserve">
+    <value>KKM</value>
+  </data>
+  <data name="Printer" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="Scanner" xml:space="preserve">
+    <value>Scanner</value>
   </data>
 </root>
